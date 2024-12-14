@@ -7,3 +7,17 @@
 ::before {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: "primary";
+  src: url("/fonts/hello-world.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "secondary";
+  src: url("/fonts/cecep.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

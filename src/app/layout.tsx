@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { cn } from "@/utils/cn";
 
 export const metadata: Metadata = {
   title: "Unides Website",
@@ -13,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-primary">{children}</body>
+      <body className={cn("bg-primary flex justify-center items-center",)}>
+        {children}
+      </body>
     </html>
   );
 }
