@@ -9,13 +9,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#ff909f",
+        primaryText: "#003239",
+        primaryAccent: "#ead600",
+        secondary: "#b688ff",
+        secondaryText: "#cafd00",
+        secondaryAccent: "#ff5d00",
       },
     },
   },
   plugins: [],
 } satisfies Config;
-
-
-
