@@ -1,7 +1,5 @@
 export default function About() {
   return (
-    <section>
-      <article> About us</article>
-    </section>
+    <main className="w-full flex justify-center items-center bg-secondary">ABOUT</main>
   );
 }

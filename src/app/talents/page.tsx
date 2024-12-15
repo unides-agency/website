@@ -1,7 +1,5 @@
 export default function Talents() {
   return (
-    <section>
-      <article> Talents</article>
-    </section>
+    <main className="w-full flex justify-center items-center bg-secondary">TALENTS</main>
   );
 }

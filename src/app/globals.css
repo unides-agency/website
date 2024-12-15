@@ -21,3 +21,12 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@layer base {
+  html {
+    font-size: 3rem;
+  }
+  body {
+    font-family: "primary", sans-serif;
+  }
+}

@@ -12,6 +12,7 @@ export default {
         primary: ["primary", "sans-serif"],
         secondary: ["secondary", "sans-serif"],
       },
+
       colors: {
         primary: "#ff909f",
         primaryText: "#003239",
