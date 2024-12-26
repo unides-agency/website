@@ -2,16 +2,61 @@
   {
     "id": "1",
     "name": "Alice Johnson",
-    "age": 28
+    "age": 28,
+    "img": "/images/img-01.jpg"
   },
   {
     "id": "2",
     "name": "Bob Smith",
-    "age": 34
+    "age": 34,
+    "img": "/images/img-02.jpg"
   },
   {
     "id": "3",
     "name": "Charlie Brown",
-    "age": 22
+    "age": 22,
+    "img": "/images/img-03.jpg"
+  },
+  {
+    "id": "4",
+    "name": "David Lee",
+    "age": 29,
+    "img": "/images/img-04.jpg"
+  },
+  {
+    "id": "5",
+    "name": "Eva Williams",
+    "age": 31,
+    "img": "/images/img-01.jpg"
+  },
+  {
+    "id": "6",
+    "name": "Franklin Davis",
+    "age": 27,
+    "img": "/images/img-04.jpg"
+  },
+  {
+    "id": "7",
+    "name": "Grace Wilson",
+    "age": 25,
+    "img": "/images/img-02.jpg"
+  },
+  {
+    "id": "8",
+    "name": "Hannah Martinez",
+    "age": 30,
+    "img": "/images/img-03.jpg"
+  },
+  {
+    "id": "9",
+    "name": "Isaac Anderson",
+    "age": 26,
+    "img": "/images/img-04.jpg"
+  },
+  {
+    "id": "10",
+    "name": "Jack Thomas",
+    "age": 33,
+    "img": "/images/img-01.jpg"
   }
 ]

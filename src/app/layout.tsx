@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { cn } from "@/utils/cn";
 import Header from "@/components/Header";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -19,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn("bg-primary ")}>
         <Header />
-        <Navbar />
+
         {children}
         <Footer />
       </body>
