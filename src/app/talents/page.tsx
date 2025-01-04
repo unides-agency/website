@@ -6,14 +6,14 @@ export default function Talents() {
   const talents = data;
 
   return (
-    <main className="w-full flex justify-center items-center ">
-      <ul className={cn("grid grid-cols-5 gap-6 place-items-center", "py-6", "xs:w-full md:w-4/5")}>
+    <section>
+      <ul className={cn("grid grid-cols-5 gap-6 place-items-center")}>
         {talents.map((talent) => (
           <li className={cn("group relative", " overflow-hidden")} key={talent.id}>
             <ArtistCard talent={talent} />
           </li>
         ))}
       </ul>
-    </main>
+    </section>
   );
 }

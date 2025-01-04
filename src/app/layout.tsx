@@ -16,10 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("bg-primary ")}>
+      <body className={cn("bg-primary w-full ")}>
         <Header />
-
-        {children}
+        <main className="mx-auto w-[90%]">{children}</main>
         <Footer />
       </body>
     </html>

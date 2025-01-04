@@ -1,62 +1,142 @@
 [
   {
     "id": "1",
-    "name": "Alice Johnson",
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "eyeColor": "Brown",
+    "hairColor": "Black",
+    "height": 170,
+    "location": "Berlin",
+    "shoeSize": 39,
+    "dressSize": 36,
     "age": 28,
-    "img": "/images/img-01.jpg"
+    "img": "/images/img-01.jpg",
+    "tags": ["exampleTag1", "exampleTag2"]
   },
   {
     "id": "2",
-    "name": "Bob Smith",
-    "age": 34,
-    "img": "/images/img-02.jpg"
+    "firstName": "Bob",
+    "lastName": "Smith",
+    "eyeColor": "Blue",
+    "hairColor": "Blonde",
+    "height": 180,
+    "location": "New York",
+    "shoeSize": 42,
+    "dressSize": 38,
+    "age": 32,
+    "img": "/images/img-02.jpg",
+    "tags": ["exampleTag1", "exampleTag2"]
   },
   {
     "id": "3",
-    "name": "Charlie Brown",
-    "age": 22,
-    "img": "/images/img-03.jpg"
+    "firstName": "Charlie",
+    "lastName": "Brown",
+    "eyeColor": "Green",
+    "hairColor": "Red",
+    "height": 175,
+    "location": "London",
+    "shoeSize": 41,
+    "dressSize": 40,
+    "age": 25,
+    "img": "/images/img-03.jpg",
+    "tags": ["exampleTag1", "exampleTag2"]
   },
   {
     "id": "4",
-    "name": "David Lee",
+    "firstName": "David",
+    "lastName": "Wilson",
+    "eyeColor": "Hazel",
+    "hairColor": "Brown",
+    "height": 165,
+    "location": "Paris",
+    "shoeSize": 40,
+    "dressSize": 34,
     "age": 29,
-    "img": "/images/img-04.jpg"
+    "img": "/images/img-04.jpg",
+    "tags": ["exampleTag1", "exampleTag2"]
   },
   {
     "id": "5",
-    "name": "Eva Williams",
-    "age": 31,
-    "img": "/images/img-01.jpg"
+    "firstName": "Eve",
+    "lastName": "Davis",
+    "eyeColor": "Gray",
+    "hairColor": "Black",
+    "height": 160,
+    "location": "Tokyo",
+    "shoeSize": 38,
+    "dressSize": 36,
+    "age": 27,
+    "img": "/images/img-01.jpg",
+    "tags": ["exampleTag1", "exampleTag2"]
   },
   {
     "id": "6",
-    "name": "Franklin Davis",
-    "age": 27,
-    "img": "/images/img-04.jpg"
+    "firstName": "Frank",
+    "lastName": "Miller",
+    "eyeColor": "Brown",
+    "hairColor": "Blonde",
+    "height": 185,
+    "location": "Sydney",
+    "shoeSize": 44,
+    "dressSize": 42,
+    "age": 31,
+    "img": "/images/img-02.jpg",
+    "tags": ["exampleTag1", "exampleTag2"]
   },
   {
     "id": "7",
-    "name": "Grace Wilson",
-    "age": 25,
-    "img": "/images/img-02.jpg"
+    "firstName": "Grace",
+    "lastName": "Martinez",
+    "eyeColor": "Blue",
+    "hairColor": "Red",
+    "height": 168,
+    "location": "Toronto",
+    "shoeSize": 39,
+    "dressSize": 38,
+    "age": 26,
+    "img": "/images/img-03.jpg",
+    "tags": ["exampleTag1", "exampleTag2"]
   },
   {
     "id": "8",
-    "name": "Hannah Martinez",
+    "firstName": "Hank",
+    "lastName": "Garcia",
+    "eyeColor": "Green",
+    "hairColor": "Brown",
+    "height": 178,
+    "location": "San Francisco",
+    "shoeSize": 43,
+    "dressSize": 40,
     "age": 30,
-    "img": "/images/img-03.jpg"
+    "img": "/images/img-04.jpg",
+    "tags": ["exampleTag1", "exampleTag2"]
   },
   {
     "id": "9",
-    "name": "Isaac Anderson",
-    "age": 26,
-    "img": "/images/img-04.jpg"
+    "firstName": "Ivy",
+    "lastName": "Rodriguez",
+    "eyeColor": "Hazel",
+    "hairColor": "Black",
+    "height": 162,
+    "location": "Mexico City",
+    "shoeSize": 37,
+    "dressSize": 36,
+    "age": 24,
+    "img": "/images/img-01.jpg",
+    "tags": ["exampleTag1", "exampleTag2"]
   },
   {
     "id": "10",
-    "name": "Jack Thomas",
-    "age": 33,
-    "img": "/images/img-01.jpg"
+    "firstName": "Jack",
+    "lastName": "Lee",
+    "eyeColor": "Gray",
+    "hairColor": "Blonde",
+    "height": 172,
+    "location": "Seoul",
+    "shoeSize": 41,
+    "dressSize": 38,
+    "age": 28,
+    "img": "/images/img-02.jpg",
+  "tags": ["exampleTag1", "exampleTag2"]
   }
 ]

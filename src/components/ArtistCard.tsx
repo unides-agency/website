@@ -1,13 +1,7 @@
 import { cn } from "@/utils/cn";
 import Image from "next/image";
 import Link from "next/link";
-
-type Talent = {
-  id: string;
-  name: string;
-  age: number;
-  img: string;
-};
+import { Talent } from "@/data/types";
 
 export default function ArtistCard({ talent }: { talent: Talent }) {
   return (
@@ -27,7 +21,7 @@ export default function ArtistCard({ talent }: { talent: Talent }) {
             "absolute z-20 bottom-0 right-2"
           )}
         >
-          {talent.name}
+          {talent.firstName} {talent.lastName}
         </p>
       </div>
 
@@ -37,7 +31,7 @@ export default function ArtistCard({ talent }: { talent: Talent }) {
           src={talent.img}
           width={400}
           height={100}
-          alt={talent.name}
+          alt={`artist-img-${talent.firstName}`}
         />
       </div>
     </Link>
