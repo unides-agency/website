@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className={cn("w-[90%] flex items-center justify-between mx-auto pb-4 pt-6")}>
+    <footer className={cn("w-[80%] flex items-center justify-between mx-auto pb-4 pt-6")}>
       <Link href="/">
         <Image src="/images/logo-black.png" alt="unides-logo" width={350} height={400} />
       </Link>

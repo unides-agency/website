@@ -21,7 +21,9 @@ export default function ArtistCard({ talent }: { talent: Talent }) {
             "absolute z-20 bottom-0 right-2"
           )}
         >
-          {talent.firstName} {talent.lastName}
+          {talent.firstName}
+          <br />
+          {talent.lastName}
         </p>
       </div>
 

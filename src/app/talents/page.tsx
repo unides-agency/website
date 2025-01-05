@@ -7,9 +7,9 @@ export default function Talents() {
 
   return (
     <section>
-      <ul className={cn("grid grid-cols-5 gap-6 place-items-center")}>
+      <ul className={cn("grid grid-cols-4 gap-6 place-items-center")}>
         {talents.map((talent) => (
-          <li className={cn("group relative", " overflow-hidden")} key={talent.id}>
+          <li className={cn("group relative")} key={talent.id}>
             <ArtistCard talent={talent} />
           </li>
         ))}

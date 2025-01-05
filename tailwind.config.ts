@@ -14,6 +14,21 @@ export default {
       lg: "1024px",
       xl: "1280px",
     },
+    fontSize: {
+      xs: ["1.5rem", "0.8"],
+      sm: ["1.75rem", "0.8"],
+      base: ["2rem", "1"],
+      lg: ["2.25rem", "1"],
+      xl: ["2.5rem", "1.1"],
+      "2xl": ["3rem", "1.1"],
+      "3xl": ["3.75rem", "1.1"],
+      "4xl": ["4.5rem", "1.25"],
+      "5xl": ["6rem", "1.25"],
+      "6xl": ["7.5rem", "1.25"],
+      "7xl": ["9rem", "1.25"],
+      "8xl": ["12rem", "1.25"],
+      "9xl": ["16rem", "1.25"],
+    },
     extend: {
       fontFamily: {
         primary: ["primary", "sans-serif"],

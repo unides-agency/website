@@ -7,7 +7,7 @@ export default function Navbar() {
   const path = usePathname();
 
   return (
-    <nav className="text-5xl">
+    <nav className="">
       <ul className={cn("flex flex-col justify-around items-end")}>
         <li
           className={cn(

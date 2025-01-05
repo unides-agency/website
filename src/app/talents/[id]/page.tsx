@@ -28,18 +28,19 @@ export default function TalentPage() {
             alt={`artist-avatar-${talent.firstName}`}
           />
         </aside>
-        <article className=" w-full md:flex-1 flex flex-col justify-between relative ">
-          <h2 aria-label="talent-name" className="font-secondary">
-            {talent.firstName} {talent.lastName}
+        <article className=" w-full md:flex-1 flex flex-col  relative ">
+          <h2 aria-label="talent-name" className="font-secondary text-2xl ">
+            {talent.firstName} <br />
+            {talent.lastName}
           </h2>
-          <p>Location: {talent.location}</p>
-          <p>Age: {talent.age}</p>
-          <p>Eye Color: {talent.eyeColor}</p>
-          <p>Hair Color: {talent.hairColor}</p>
-          <p>Shoe Size: {talent.shoeSize}</p>
-          <p>Dress Size: {talent.dressSize}</p>
-          <p>Height: {talent.height}</p>
-          <div className="text-3xl w-full flex flex-wrap">
+          <p className="text-lg">Location: {talent.location}</p>
+          <p className="text-lg">Age: {talent.age}</p>
+          <p className="text-lg">Eye Color: {talent.eyeColor}</p>
+          <p className="text-lg">Hair Color: {talent.hairColor}</p>
+          <p className="text-lg">Shoe Size: {talent.shoeSize}</p>
+          <p className="text-lg">Dress Size: {talent.dressSize}</p>
+          <p className="text-lg">Height: {talent.height}</p>
+          <div className="w-full flex flex-wrap">
             {talent.tags.map((tag) => (
               <span className="p-2 rounded-xl" key={tag}>
                 {tag}
@@ -48,7 +49,7 @@ export default function TalentPage() {
           </div>
 
           {/* BUTTONS */}
-          <div className=" absolute top-4 right-4 flex flex-col gap-4">
+          <div className="text-xs absolute top-0 right-0 flex flex-col gap-4">
             <button
               type="button"
               className="bg-white px-4 py-2 rounded-lg"
@@ -68,15 +69,10 @@ export default function TalentPage() {
       </section>
 
       {/* IMAGE GALLERY */}
-      <section className="bg-slate-200 grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
-        <div className="w-32 h-24 bg-red-400">IMAGE</div>
-        <div className="w-32 h-24 bg-red-400">IMAGE</div>
-        <div className="w-32 h-24 bg-red-400">IMAGE</div>
-        <div className="w-32 h-24 bg-red-400">IMAGE</div>
-        <div className="w-32 h-24 bg-red-400">IMAGE</div>
-        <div className="w-32 h-24 bg-red-400">IMAGE</div>
-        <div className="w-32 h-24 bg-red-400">IMAGE</div>
-        <div className="w-32 h-24 bg-red-400">IMAGE</div>
+      <section className=" grid grid-cols-2 md:grid-cols-4 gap-4 ">
+        {talents.map((talent, index) => (
+          <Image key={index} src={talent.img} width={600} height={800} alt="img" />
+        ))}
       </section>
     </>
   );
