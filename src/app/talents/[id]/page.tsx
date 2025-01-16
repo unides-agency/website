@@ -33,13 +33,13 @@ export default function TalentPage() {
             {talent.firstName} <br />
             {talent.lastName}
           </h2>
-          <p className="text-lg">Location: {talent.location}</p>
-          <p className="text-lg">Age: {talent.age}</p>
-          <p className="text-lg">Eye Color: {talent.eyeColor}</p>
-          <p className="text-lg">Hair Color: {talent.hairColor}</p>
-          <p className="text-lg">Shoe Size: {talent.shoeSize}</p>
-          <p className="text-lg">Dress Size: {talent.dressSize}</p>
-          <p className="text-lg">Height: {talent.height}</p>
+          <p className="">Location: {talent.location}</p>
+          <p className="">Age: {talent.age}</p>
+          <p className="">Eye Color: {talent.eyeColor}</p>
+          <p className="">Hair Color: {talent.hairColor}</p>
+          <p className="">Shoe Size: {talent.shoeSize}</p>
+          <p className="">Dress Size: {talent.dressSize}</p>
+          <p className="">Height: {talent.height}</p>
           <div className="w-full flex flex-wrap">
             {talent.tags.map((tag) => (
               <span className="p-2 rounded-xl" key={tag}>
@@ -49,7 +49,7 @@ export default function TalentPage() {
           </div>
 
           {/* BUTTONS */}
-          <div className="text-xs absolute top-0 right-0 flex flex-col gap-4">
+          <div className=" absolute top-0 right-0 flex flex-col gap-4">
             <button
               type="button"
               className="bg-white px-4 py-2 rounded-lg"

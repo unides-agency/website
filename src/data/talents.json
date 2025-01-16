@@ -137,6 +137,6 @@
     "dressSize": 38,
     "age": 28,
     "img": "/images/img-02.jpg",
-  "tags": ["exampleTag1", "exampleTag2"]
+    "tags": ["exampleTag1", "exampleTag2"]
   }
 ]

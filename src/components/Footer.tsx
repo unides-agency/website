@@ -4,19 +4,29 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className={cn("w-[80%] flex items-center justify-between mx-auto pb-4 pt-6")}>
+    <footer
+      className={cn(
+        "flex items-center justify-between mx-auto px-16 pb-10 pt-2"
+        // "grid grid-cols-3 px-8 items-center"
+      )}
+    >
       <Link href="/">
-        <Image src="/images/logo-black.png" alt="unides-logo" width={350} height={400} />
+        <Image src="/images/logo-black.png" alt="unides-logo" width={200} height={100} />
       </Link>
 
-      <ul className={cn("flex flex-col justify-around items-end")}>
-        <li className={cn("transition ", "hover:text-primaryAccent hover:duration-300")}>
-          <Link href="/about">About us</Link>
-        </li>
+      <div className="bg-red-500">
+        UNIDES AGENCY
+        <br />
+        Wisbyer str 74
+        <br />
+        10439, Berlin
+      </div>
 
-        <li className={cn("transition ", "hover:text-primaryAccent hover:duration-300")}>
-          <Link href="/contact">Contact</Link>
-        </li>
+      <div className="bg-red-500">
+        {`Let's work together`} <br /> Email:info@unides-agency.com
+      </div>
+
+      <ul className={cn("flex flex-col justify-around items-end")}>
         <li className={cn("transition ", "hover:text-primaryAccent hover:duration-300")}>
           <Link href="/privacy">Privacy</Link>
         </li>

@@ -22,9 +22,9 @@
   font-style: normal;
 }
 
-@layer base {
+/* @layer base {
   body {
     font-family: "primary", sans-serif;
     color: #003239;
   }
-}
+} */
