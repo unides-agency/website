@@ -24,18 +24,14 @@ export default function Home() {
       <ul className="grid grid-cols-2 gap-12 pt-4 pb-16">
         {talents.map((talent) => (
           <div key={talent.id}>
-            <li
-              className={cn("w-full aspect-square relative bg-green-500 overflow-hidden")}
-              key={talent.id}
-            >
+            <li className={cn("w-full aspect-square relative overflow-hidden")} key={talent.id}>
               {/* THIS IS THE DYNAMIC ROUTE FOR PROJECTS!!!! */}
               <Link href="/projects/id">
                 <Image
-                  className={cn("hover:scale-110 transition duration-500")}
+                  className={cn("hover:scale-110 transition duration-500 object-cover")}
                   src={talent.img}
                   alt="asd"
                   fill
-                  style={{ objectFit: "cover" }}
                 />
               </Link>
             </li>

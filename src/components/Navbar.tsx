@@ -8,7 +8,7 @@ export default function Navbar() {
 
   return (
     <nav className="">
-      <ul className={cn("flex flex-col justify-around items-end")}>
+      <ul className={cn("flex flex-col justify-around items-end text-2xl")}>
         <li
           className={cn(
             path === "/about" && "text-primaryAccent",
