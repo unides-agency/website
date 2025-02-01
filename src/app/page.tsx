@@ -1,10 +1,11 @@
 import { cn } from "@/utils/cn";
-import data from "@/data/talents.json";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
-  const talents = data;
+import data from "@/data/talents.json";
+
+export default async function Home() {
+  const talents = data
 
   return (
     <section>
@@ -19,26 +20,26 @@ export default function Home() {
         ut, Welcome to our talent agency website. We provide models, actors, and
       </p>
 
-      <hr className="my-4 border-t-2 border-primaryText bg-red-500" />
+      <hr className="my-4 border-t-2 border-primaryText" />
 
       <ul className="grid grid-cols-2 gap-12 pt-4 pb-16">
         {talents.map((talent) => (
-          <div key={talent.id}>
-            <li className={cn("w-full aspect-square relative overflow-hidden")} key={talent.id}>
+          <div key={talent.firstName}>
+            <li className={cn("w-full relative aspect-square overflow-hidden")} key={talent.firstName}>
               {/* THIS IS THE DYNAMIC ROUTE FOR PROJECTS!!!! */}
-              <Link href="/projects/id">
+              <Link href={`/projects/id`}>
                 <Image
                   className={cn("hover:scale-110 transition duration-500 object-cover")}
                   src={talent.img}
                   alt="asd"
                   fill
+                  // width={500}
+                  // height={500}
                 />
               </Link>
             </li>
             <div className="flex justify-between text-xl">
               <h2>category</h2>
-
-              <div className="flex">{talent.tags[0]}</div>
             </div>
           </div>
         ))}

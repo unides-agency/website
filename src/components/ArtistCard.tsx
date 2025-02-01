@@ -5,7 +5,7 @@ import { Talent } from "@/data/types";
 
 export default function ArtistCard({ talent }: { talent: Talent }) {
   return (
-    <Link className="size-full" href={`talents/${talent.id.toString()}`}>
+    <Link className="size-full" href={`/talents/${talent.id}`}>
       <div
         className={cn(
           "absolute z-10 inset-0 opacity-0",

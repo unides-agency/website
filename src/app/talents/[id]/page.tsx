@@ -1,20 +1,11 @@
-"use client";
-import { useParams, useRouter } from "next/navigation";
-import data from "@/data/talents.json";
 import Image from "next/image";
 import { cn } from "@/utils/cn";
+import { getDocument } from "@/app/actions";
 
-export default function TalentPage() {
-  const talents = data;
-  const { id } = useParams();
-  const router = useRouter();
+export default async function TalentPage({ params }: { params: { id: string } }) {
+  const { id } = params;
 
-  const talent = talents.find((talent) => talent.id === id);
-
-  if (!talent) {
-    router.push("/");
-    return;
-  }
+  const talent = await getDocument("talents", id.toString());
 
   return (
     <>
@@ -41,7 +32,7 @@ export default function TalentPage() {
           <p className="">Dress Size: {talent.dressSize}</p>
           <p className="">Height: {talent.height}</p>
           <div className="w-full flex flex-wrap">
-            {talent.tags.map((tag) => (
+            {talent.tags.map((tag: string) => (
               <span className="p-2 rounded-xl" key={tag}>
                 {tag}
               </span>
@@ -50,18 +41,10 @@ export default function TalentPage() {
 
           {/* BUTTONS */}
           <div className=" absolute top-0 right-0 flex flex-col gap-4">
-            <button
-              type="button"
-              className="bg-white px-4 py-2 rounded-lg"
-              onClick={() => console.log("press")}
-            >
+            <button type="button" className="bg-white px-4 py-2 rounded-lg">
               Add to Favorites
             </button>
-            <button
-              type="button"
-              className="bg-white px-4 py-2 rounded-lg"
-              onClick={() => console.log("press")}
-            >
+            <button type="button" className="bg-white px-4 py-2 rounded-lg">
               Download SedCard
             </button>
           </div>
@@ -69,11 +52,11 @@ export default function TalentPage() {
       </section>
 
       {/* IMAGE GALLERY */}
-      <section className=" grid grid-cols-2 md:grid-cols-4 gap-4 ">
+      {/* <section className=" grid grid-cols-2 md:grid-cols-4 gap-4 ">
         {talents.map((talent, index) => (
           <Image key={index} src={talent.img} width={600} height={800} alt="img" />
         ))}
-      </section>
+      </section> */}
     </>
   );
 }

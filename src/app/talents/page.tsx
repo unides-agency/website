@@ -1,9 +1,10 @@
 import ArtistCard from "@/components/ArtistCard";
-import data from "@/data/talents.json";
 import { cn } from "@/utils/cn";
+import { getCollection } from "@/app/actions";
+import { Talent } from "@/data/types";
 
-export default function Talents() {
-  const talents = data;
+export default async function Talents() {
+  const talents = await getCollection<Talent>("talents");
 
   return (
     <section>

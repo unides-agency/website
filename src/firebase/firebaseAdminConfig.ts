@@ -8,9 +8,7 @@ if (!admin.apps.length) {
 
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccountPath),
-    databaseURL: `https://fw-shop-28a91.firebaseio.com`,
   });
-  
 }
 
 // Get Firestore instance
