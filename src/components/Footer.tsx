@@ -14,7 +14,7 @@ export default function Footer() {
         <Image src="/images/logo-black.png" alt="unides-logo" width={200} height={100} />
       </Link>
 
-      <div className="bg-red-500">
+      <div className="">
         UNIDES AGENCY
         <br />
         Wisbyer str 74
@@ -22,7 +22,7 @@ export default function Footer() {
         10439, Berlin
       </div>
 
-      <div className="bg-red-500">
+      <div className="">
         {`Let's work together`} <br /> Email:info@unides-agency.com
       </div>
 

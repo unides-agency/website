@@ -27,6 +27,16 @@ export default function Navbar() {
         >
           <Link href="/talents">Talents</Link>
         </li>
+
+        <li
+          className={cn(
+            path.startsWith("/favorites") && "text-primaryAccent",
+            "transition ",
+            "hover:text-primaryAccent hover:duration-300"
+          )}
+        >
+          <Link href="/favorites">Favorites</Link>
+        </li>
         <li
           className={cn(
             path === "/contact" && "text-primaryAccent",

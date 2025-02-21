@@ -38,3 +38,14 @@ export async function addDocument<T extends admin.firestore.DocumentData>(
     ...(doc.data() as T),
   };
 }
+
+export async function toggleFavorite(
+  collectionName: string,
+  documentId: string,
+  isFavorite: boolean
+): Promise<void> {
+  const docRef = adminDb.collection(collectionName).doc(documentId);
+  await docRef.update({
+    isFavorite: !isFavorite,
+  });
+}

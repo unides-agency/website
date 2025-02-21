@@ -3,7 +3,7 @@ import { cn } from "@/utils/cn";
 import { getDocument } from "@/app/actions";
 
 export default async function TalentPage({ params }: { params: { id: string } }) {
-  const { id } = params;
+  const {id} = await params;
 
   const talent = await getDocument("talents", id.toString());
 
@@ -42,10 +42,10 @@ export default async function TalentPage({ params }: { params: { id: string } })
           {/* BUTTONS */}
           <div className=" absolute top-0 right-0 flex flex-col gap-4">
             <button type="button" className="bg-white px-4 py-2 rounded-lg">
-              Add to Favorites
+            ❤️‍🔥
             </button>
             <button type="button" className="bg-white px-4 py-2 rounded-lg">
-              Download SedCard
+            💾 SedCard
             </button>
           </div>
         </article>

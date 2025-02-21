@@ -11,4 +11,5 @@ export type Talent = {
   age: number;
   img: string;
   tags: string[];
+  isFavorite: boolean;
 };
