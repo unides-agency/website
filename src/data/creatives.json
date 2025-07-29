@@ -1,0 +1,80 @@
+[
+  {
+    "id": "EveQueiroz",
+    "name": "Eve Queiroz",
+    "enabled": true,
+    "description": "Eve Queiroz is a Brazilian visual artist who has stood out for her creative trajectory, which moves between street art, illustration, tattoo and cannabis consultancy. She began her artistic career in 2009 with the Negahamburguer project, focused on graffiti, and over the years has expanded her work to other forms of expression, addressing social issues such as freedom of the body, blackness and women's rights. Her work reflects a strong connection with her identity and the search for freedom and social justice. Her most recent work integrates cannabis culture, and Eve also works as a consultant.",
+    "image": "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Eve+Queiroz/_DSC5369.jpg",
+    "imgs": [
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Eve+Queiroz/_DSC5477.jpg",
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Eve+Queiroz/_DSC5488.jpg",
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Eve+Queiroz/_DSC5698.jpg"
+    ],
+    "location": "Berlin",
+    "personalInfo": { "behance": "https://www.behance.net/evelynqueiroz?" },
+    "specialties": [ "Graffiti", "Illustration", "Tattoo", "visual arts" ]
+  },
+  {
+    "id": "Hadryah",
+    "name": "Hadryah",
+    "enabled": true,
+    "image": "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Hadryah/WhatsApp+Image+2025-07-12+at+15.52.14+(1).jpeg",
+    "imgs": [
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Hadryah/WhatsApp+Image+2025-07-12+at+15.52.13.jpeg",
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Hadryah/WhatsApp+Image+2025-07-12+at+15.52.14+(1).jpeg",
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Hadryah/WhatsApp+Image+2025-07-12+at+15.52.14+(2).jpeg",
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Hadryah/WhatsApp+Image+2025-07-12+at+15.52.14+(3).jpeg",
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Hadryah/WhatsApp+Image+2025-07-12+at+15.52.14.jpeg"
+    ],
+    "description": "A self-taught and multidisciplinary artist, they move fluidly between music, visual arts, upcycling, clothing customization, and performance. Their creations don’t follow formulas — they emerge from a genuine impulse for expression, healing, and transformation. Each piece, each sound, each gesture carries the energy of someone who lives art as both therapy and a tool for expanding consciousness. Their brilliance shines through in the way they see possibilities where others see waste: garments are given new life in their hands, transformed with intention and care. Customization and material reuse are not just aesthetic choices, but a philosophy — a practice that blends sustainability, identity, and creative resistance. Whether on stage or in the studio, their presence is powerful, intuitive, and constantly evolving. With innovative ideas and a deep inner listening, they use art as a mirror and a portal — a path inward, outward, and toward the collective. Their journey is one of healing, and their language is art.",
+    "location": "Berlin"
+  },
+  {
+    "id": "HouseOfGrace",
+    "name": "House Of Grace",
+    "description": "House of Grace is a DJ, producer, and curator with over 25 years of international experience. A Black, lesbian woman from Bahia, Brazil, she built her career in Berlin by bringing the sounds of Brazilian culture to the global stage. Having performed at major festivals in countries like Morocco and Uzbekistan, she now leads House Of Grace - a project rooted in house music, identity, and representation. A trailblazer in the LGBTQIAPN scene, Grace blends deep experience with bold vision and an inspiring story",
+    "enabled": true,
+    "imgs": [
+      "https://www.youtube.com/watch?v=i2ooUALGaZo",
+      "https://www.youtube.com/watch?v=TyOzH5vabec"
+    ],
+    "location": "Berlin",
+    "image": "https://unides.s3.eu-central-1.amazonaws.com/images/talents/House+of+Grace/Captura+de+Tela+2025-07-25+a%CC%80s+18.39.49.png",
+    "personalInfo": { "soundcloud": "https://soundcloud.com/houseof_grace/radio-veneno" }
+  },
+  {
+    "id": "Mallo",
+    "name": "Mallo",
+    "enabled": true,
+    "description": "Fitness Trainer and Performer Mallo Santo brings extensive experience to the dance industry. Originally from Ceará in northeastern Brazil, Mallo has carved out a distinctive presence in Berlin's dance scene. Blending Brazilian and Caribbean influences, Mallo creates a dynamic and captivating repertoire that moves the Berlin audience. ",
+    "specialties": [ "Dancer", "Fitness Trainer", "Choreographer" ],
+    "location": "Berlin",
+    "image": "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Mallo/IMG_2359.jpg",
+    "imgs": [
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Mallo/IMG_2360.jpg"
+    ]
+  },
+  {
+    "id": "Mamede",
+    "name": "Mamede",
+    "enabled": true,
+    "image": "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Mamede/drive-download-20250712T134016Z-1-001/mamede+1.jpeg",
+    "description": "Originally from Maranhão, Brazil, Mamede is a Berlin-based DJ whose sound bridges the vibrant pulse of the Brazilian Northeast with global dance floors. With past lives in Belém and São Paulo, and performances in cities like Tokyo, Amsterdam, Madrid, and Barcelona, Mamede brings a uniquely diasporic perspective to his sets.  Blending tribal, house, and disco, his music celebrates queer joy and cultural resilience. Mamede curates a monthly party in Berlin while continuously exploring new artistic and sonic territories.",
+    "location": "Berlin",
+    "imgs": [
+      "https://www.youtube.com/live/xUa9-b5gCL",
+      "https://www.youtube.com/watch?v=3WEMfi2f2Ww"
+    ],
+    "personalInfo": {
+      "soundcloud": "https://soundcloud.com/edgeberlin/miss-cis-you-think-youre-fierce-mamede-edge-mix-010"
+    }
+  },
+  {
+    "id": "Pilove",
+    "name": "Pilove",
+    "enabled": true,
+    "location": "Berlin",
+    "image": "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Pilove/IMG_2358.jpg",
+    "description": "Brazilian artist Pilove forges a radical new sound where the sacred meets the synthetic. As both DJ and producer, he electrifies northern Brazil's rich musical heritage - particularly the ecstatic bounce of tecno brega and ceremonial pulse of Toré rhythms - with Berlin's industrial techno might.\nHis newly released KiLOVe album is a revelation: tribal tambores morph into distorted bass weapons, while womb-like frequencies embrace the listener in what becomes both club manifesto and spiritual journey. This is tropical futurism at its most potent - where Amazonian heat dissolves into concrete smoke, creating immersive experiences that honor queer resistance and ancestral memory alike."
+  }
+]

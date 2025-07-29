@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import { cn } from "@/utils/cn";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Unides Website",
@@ -23,9 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("bg-primary w-full", `${outfit.className}`)}>
+      <body className={cn(`${outfit.className}`, "selection:bg-secondary selection:text-white")}>
         <Header />
-        <main className="mx-auto w-[80%]">{children}</main>
+        {children}
         <Footer />
       </body>
     </html>
