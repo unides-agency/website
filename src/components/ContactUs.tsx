@@ -1,103 +1,101 @@
-import React from 'react'
-import ContentSection from './ContentSection'
-
-const contactSubtitle = (
-    <>
-      <span className="text-primary unides-brand">UNIDES</span> stands for{" "}
-      <span className="text-primary">united</span>. {`We're crafting `}
-      <span className="text-primary">more</span> than just a team.
-    </>
-  )
+"use client";
+import React, { useState } from "react";
+import ContentSection from "./ContentSection";
+import { cn } from "@/utils/cn";
 
 export default function ContactUs() {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const update = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setForm((f) => ({ ...f, [name]: value }));
+  };
+  const submit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("contact form submit", form);
+    // TODO: Email JS integration
+  };
   return (
+    <ContentSection
+      id="contact"
+      title="contact us"
+      subtitle=""
+      bgColor="white"
+      accentColor="unides-pink"
+    >
+      <div className="flex flex-wrap justify-between gap-12 w-4/5 max-w-4xl">
+        <article className="">
+          <h3 className="font-jaro text-4xl text-unides-pink">get in touch</h3>
+          <p className="max-w-md my-4">
+            {`Bring your vision, and let's craft a portfolio together. Your idea is the spark - we’ll
+            help turn it into reality.`}
+            <br />
+            {`Send us a message and we'll respond as soon as possible.`}
+          </p>
 
-      <ContentSection id="contact" title="Contact" subtitle={contactSubtitle}>
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6">
-            <div className="space-y-6">
-              <div>
-                <h3 className="font-bold text-lg mb-2 text-purple-600">Get in Touch</h3>
-                <p className="text-offset">
-                  {`Your idea is the spark we'll help turn it into reality. Send us a message and
-                  we'll respond as soon as possible.`}
-                </p>
-              </div>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-sm md:text-base">Email</h4>
-                  <p className="text-offset text-sm md:text-base font-medium">
-                    info@unides-agency.com
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm md:text-base">Phone</h4>
-                  <p className="text-offset text-sm md:text-base font-medium">+49 (172) 802 7395</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm md:text-base">Address</h4>
-                  <p className="text-offset text-sm md:text-base font-medium leading-6">
-                    Soldiner Straße 72
-                    <br />
-                    13359 Berlin
-                  </p>
-                </div>
-              </div>
-            </div>
-            <form id="contact-form" className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-1">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Your full name"
-                  className="w-full px-4 py-3 bg-[#0a353a] border border-[#c6a2ff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#d9fd12] text-white placeholder:text-gray-400"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-1">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="your.email@example.com"
-                  className="w-full px-4 py-3 bg-[#0a353a] border border-[#c6a2ff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#d9fd12] text-white placeholder:text-gray-400"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-1">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  placeholder="Tell us about your project or idea..."
-                  className="w-full px-4 py-3 bg-[#0a353a] border border-[#c6a2ff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#d9fd12] text-white placeholder:text-gray-400"
-                  required
-                />
-              </div>
-              <button
-                type="submit"
-                id="submit-btn"
-                className="w-full bg-primary text-white px-4 py-3 rounded-md hover:bg-primary/90 transition-colors font-medium"
-              >
-                Send Message
-              </button>
-              <div
-                id="form-status"
-                className="hidden text-center text-sm md:text-base font-medium mt-3"
-              ></div>
-            </form>
-          </div>
-        </div>
-      </ContentSection>
-  )
+          <h3 className="text-unides-pink">email</h3>
+          <p className="max-w-md mb-4">unides.agency@gmail.com</p>
+
+          <h3 className="text-unides-pink">phone</h3>
+          <p className="max-w-md mb-4">+49 (151) 5614 6198</p>
+
+          <h3 className="text-unides-pink">address</h3>
+          <p className="max-w-md mb-4">
+            Soldiner Straße 72 <br />
+            13359 <br />
+            Berlin
+          </p>
+        </article>
+
+        <form onSubmit={submit} className="flex flex-col gap-4 flex-1 min-w-[280px] max-w-md">
+          <input
+            type="text"
+            name="name"
+            id="name"
+            value={form.name}
+            onChange={update}
+            placeholder="name"
+            required
+            className={cn(
+              "bg-white border-2 border-unides-pink rounded-lg",
+              "placeholder:font-jaro p-2 text-xl focus:outline-none"
+            )}
+          />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value={form.email}
+            onChange={update}
+            placeholder="email"
+            required
+            className={cn(
+              "bg-white border-2 border-unides-pink rounded-lg",
+              "placeholder:font-jaro p-2 text-xl focus:outline-none"
+            )}
+          />
+          <textarea
+            name="message"
+            id="message"
+            value={form.message}
+            onChange={update}
+            placeholder="message"
+            rows={6}
+            className={cn(
+              "bg-white border-2 border-unides-pink rounded-lg",
+              "placeholder:font-jaro p-2 text-lg focus:outline-none"
+            )}
+          />
+          <button
+            type="submit"
+            className={cn(
+              "font-jaro bg-unides-pink text-2xl px-6 py-3",
+              "rounded-lg hover:brightness-110 transition duration-200 ease-in-out cursor-pointer"
+            )}
+          >
+            send
+          </button>
+        </form>
+      </div>
+    </ContentSection>
+  );
 }

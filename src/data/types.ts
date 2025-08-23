@@ -35,7 +35,7 @@ export interface Artist {
 
 interface RoleData {
   actor?: {
-    type: "Actor" | "Model" | "Presenter";
+    type: "Actor" | "Model" ;
     birthData: string;
     eyeColor: string;
     hairColor: string;

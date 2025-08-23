@@ -1,130 +1,138 @@
-import React from 'react'
-import ContentSection from './ContentSection'
-import Image from 'next/image'
+"use client";
+import React, { useState, useRef } from "react";
+import ContentSection from "./ContentSection";
+import { cn } from "@/utils/cn";
 
-const aboutSubtitle = (
-    <>
-      At <span className="text-primary unides-brand">UNIDES</span>, we bring culture to life through{" "}
-      <span className="text-primary">unforgettable events</span> where music, art, and community
-      meet. <span className="text-primary">Talent. Culture. Impact.</span>
-    </>
-  )
+type Section = {
+  id: string;
+  title: string;
+  body: string;
+};
+
+const SECTIONS: Section[] = [
+  {
+    id: "vision",
+    title: "our vision",
+    body: "Our vision is to create a vibrant and inclusive community where artists and creators can thrive, collaborate, and inspire each other. We believe in the transformative power of art to connect people, challenge perspectives, and drive positive change in society.",
+  },
+  {
+    id: "mission",
+    title: "our mission",
+    body: "Our mission is to empower artists and creators by providing them with the resources, opportunities, and support they need to succeed. We are committed to fostering a culture of creativity, innovation, and collaboration, and to promoting diversity and inclusion in all aspects of our work.",
+  },
+  {
+    id: "values",
+    title: "our values",
+    body: "We value creativity, authenticity, and integrity in all that we do. We are dedicated to supporting and uplifting artists and creators from all backgrounds and disciplines. We believe in the power of community and collaboration to drive positive change, and we are committed to fostering a culture of respect, inclusivity, and empowerment.",
+  },
+];
 
 export default function AboutUs() {
+  const [openId, setOpenId] = useState<string | null>(null);
+
+  const toggle = (id: string) => setOpenId((curr) => (curr === id ? null : id));
+
   return (
-      <ContentSection id="about" title="About Us" subtitle={aboutSubtitle}>
-        <div className="max-w-4xl mx-auto space-y-8">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="values-card bg-offset p-6 rounded-lg">
-              <h3 className="font-bold text-xl mb-4 text-purple-600">Our Mission</h3>
-              <p className="text-default/80 leading-relaxed">
-                {`Elevate the next generation of Latin visionaries from underground musicians to
-                boundary-pushing visual artists. Connect authentic creativity with brands and
-                audiences hungry for something real. Redefining what "Latin art" means in
-                Europe breaking stereotypes with unstoppable innovation.`}
-              </p>
-            </div>
-            <div className="values-card bg-offset p-6 rounded-lg">
-              <h3 className="font-bold text-xl mb-4 text-purple-600">Our Vision</h3>
-              <p className="text-default/80 leading-relaxed">
-                Uniting Latinx talent and culture to transform the creative landscape—boldly,
-                purposefully, together.
-              </p>
-            </div>
-          </div>
+    <ContentSection
+      id="about"
+      title="about us"
+      subtitle="At Unides nides, we connect artists, filmmakers, models and creators of all kinds with brands, stages and screens."
+      secondarySubtitle="We also bring culture to life through unforgettable events - where music, art and community meet."
+      bgColor="unides-lime"
+      accentColor="unides-orange"
+    >
+      <div className="w-4/5 max-w-4xl flex flex-col items-stretch gap-4">
+        {SECTIONS.map((section) => (
+          <AccordionItem
+            key={section.id}
+            section={section}
+            open={openId === section.id}
+            onToggle={() => toggle(section.id)}
+          />
+        ))}
+      </div>
+    </ContentSection>
+  );
+}
 
-          <div className="text-center py-12">
-            <h3 className="font-bold text-xl mb-8 text-purple-600">Our Values</h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="values-card bg-offset p-6 rounded-lg">
-                <h4 className="font-semibold text-primary mb-2">Rooted in Culture</h4>
-                <p className="text-sm text-default/80">
-                  We honor our Latin American heritage and celebrate the diversity that makes us
-                  powerful.
-                </p>
-              </div>
-              <div className="values-card bg-offset p-6 rounded-lg">
-                <h4 className="font-semibold text-primary mb-2">Together We Rise</h4>
-                <p className="text-sm text-default/80">
-                  {`Growth means nothing if we don't rise together. We build careers through real
-                  collaboration and community.`}
-                </p>
-              </div>
-              <div className="values-card bg-offset p-6 rounded-lg">
-                <h4 className="font-semibold text-primary mb-2">Support & Elevation</h4>
-                <p className="text-sm text-default/80">
-                  {`We understand how hard this path can be. That's why we're not just agents we're
-                  allies.`}
-                </p>
-              </div>
-            </div>
-            <div className="grid md:grid-cols-1 gap-6 mt-6">
-              <div className="values-card bg-offset p-6 rounded-lg">
-                <h4 className="font-semibold text-primary mb-2">Trust & Respect</h4>
-                <p className="text-sm text-default/80">
-                  {`Every relationship we build is grounded in mutual respect, transparency, and
-                  long-term trust. From day one, our goal has been clear: to unite incredible talent
-                  with the right platforms, people, and opportunities, while staying true to who we
-                  are.`}
-                </p>
-              </div>
-            </div>
-          </div>
+function AccordionItem({
+  section,
+  open,
+  onToggle,
+}: {
+  section: Section;
+  open: boolean;
+  onToggle: () => void;
+}) {
+  const contentRef = useRef<HTMLDivElement | null>(null);
 
-          <div className="about-section-divider"></div>
-
-          <div className="text-center py-12">
-            <h3 className="font-bold text-xl mb-8 text-purple-600">Meet the Founder</h3>
-            <div className="grid md:grid-cols-1 gap-6">
-              <div className="bg-offset p-8 rounded-lg shadow-md">
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <div className="flex justify-center">
-                    <div className="w-full max-w-xs h-110 overflow-hidden rounded-lg shadow-lg">
-                      <Image
-                        src="https://unides.s3.eu-central-1.amazonaws.com/images/about/_DSC4263.JPG"
-                        alt="Grasi"
-                        width={400}
-                        height={300}
-                        className="w-full h-full object-cover object-center"
-                      />
-                    </div>
-                  </div>
-                  <div className="text-center md:text-left">
-                    <h4 className="font-semibold text-xl mb-1">Grasi</h4>
-                    <p className="text-primary text-sm mb-4">Founder</p>
-                    <p className="text-sm text-default/80 leading-relaxed">
-                      {`With over 7 years of experience in operations and logistics, I bring
-                      structure, strategy, and creative problem-solving to the heart of talent
-                      management. I'm passionate about building systems that work efficiently,
-                      intuitively, and with room to grow. My background in streamlining complex
-                      processes is complemented by a lifelong love of art, which inspires fresh,
-                      human-centered solutions. At our agency, I focus on making things run smoothly
-                      behind the scenes so talent and creativity can take center stage. I'm excited
-                      to shape a space where artists thrive and ideas move with intention.`}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="about-section-divider"></div>
-
-          <div className="text-center bg-offset p-10 rounded-xl shadow-lg my-12">
-            <h3 className="font-bold text-xl mb-6 text-purple-600">
-              Ready to Build Something Real?
-            </h3>
-            <p className="text-default/80 mb-8 max-w-2xl mx-auto">
-              {`Whether you're a visionary artist ready to rise or a brand searching for authentic,
-              culture-shaping talent—we're here to make powerful, purposeful connections. Let's
-              create something unforgettable, together.`}
-            </p>
-            <button className="cta-button bg-primary text-white px-8 py-4 rounded-lg hover:bg-primary/90 transition-all font-medium text-lg shadow-md">
-              Apply now
-            </button>
-          </div>
+  return (
+    <div
+      className={cn(
+        "rounded-xl bg-unides-orange backdrop-blur-sm shadow-sm",
+        "transition-all duration-300"
+      )}
+    >
+      <button
+        className={cn(
+          "group relative w-full flex items-center justify-center p-5",
+          "focus:outline-none focus-visible:ring-2 focus-visible:ring-unides-orange/60",
+          "font-jaro"
+        )}
+        aria-expanded={open}
+        aria-controls={`${section.id}-panel`}
+        onClick={onToggle}
+      >
+        <span className="text-3xl md:text-4xl text-white pointer-events-none text-center">
+          {section.title}
+        </span>
+        <span
+          className={cn(
+            "absolute right-5 flex items-center justify-center size-12 shrink-0 rounded-full",
+            "bg-unides-orange text-white",
+            "transition-transform duration-300",
+            open ? "rotate-45" : "rotate-0"
+          )}
+        >
+          <PlusIcon />
+        </span>
+      </button>
+      <div
+        id={`${section.id}-panel`}
+        className={cn(
+          "grid transition-[grid-template-rows] duration-400 ease-in-out",
+          open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+        )}
+      >
+        <div
+          ref={contentRef}
+          className={cn(
+            "overflow-hidden px-6 pb-6 text-base leading-relaxed text-white",
+            "opacity-0 translate-y-2 transition-all duration-300",
+            open && "opacity-100 translate-y-0"
+          )}
+        >
+          <p>{section.body}</p>
         </div>
-      </ContentSection>
+      </div>
+    </div>
+  );
+}
 
-  )
+function PlusIcon() {
+  return (
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="3"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <line x1="12" x2="12" y1="4" y2="20" />
+      <line x1="4" x2="20" y1="12" y2="12" />
+    </svg>
+  );
 }

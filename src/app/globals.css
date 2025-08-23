@@ -1,65 +1,32 @@
-@import 'tailwindcss';
-@custom-variant dark (&:is(.dark *));
+@import "tailwindcss";
+
+@source inline("bg-unides-purple bg-unides-purple-dark bg-unides-lime bg-unides-green bg-unides-green-dark bg-unides-orange bg-unides-pink bg-unides-gray bg-unides-text bg-unides-text-dark");
+@source inline("after:bg-unides-lime after:bg-unides-purple after:bg-unides-green after:bg-unides-green-dark after:bg-unides-orange after:bg-unides-pink after:bg-unides-gray after:bg-unides-text after:bg-unides-text-dark");
 
 @theme {
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
-  --color-accent: var(--accent);
-  --color-success: var(--success);
-  --color-warning: var(--warning);
-  --color-error: var(--error);
-  --color-text: var(--text);
-  --color-text-offset: var(--text-offset);
-  --color-background: var(--background);
-  --color-background-offset: var(--background-offset);
-  --color-border: var(--border);
+  /* Unides Color Palette */
+  --color-unides-purple: #A987FF;      
+  --color-unides-purple-dark: #9747FF;
+  --color-unides-lime: #D9FD12;       
+  --color-unides-green: #20656F;       
+  --color-unides-green-dark: #043239;  
+  --color-unides-orange: #FD5D13;
+  --color-unides-pink: #FF8F9D;       
+  --color-unides-gray: #D9D9D9;
+  --color-unides-text: #1C5D67;       
+  --color-unides-text-dark: #0A353A;
+
+  /* Fonts */
+  --font-outfit: "Outfit", sans-serif;
+  --font-jaro: "Jaro", sans-serif;
 }
 
 html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
-
-:root {
-  --primary: #a987ff;
-  --secondary: #fd5d13;
-  --accent: #e4f50f;
-  --success: #c1e600;
-  --warning: #ff8142;
-  --error: #ff8142;
-  --text: #0a353a;
-  --text-offset: #134f55;
-  --background: #ffffff;
-  --background-offset: #f8f9fa;
-  --border: rgb(10 53 58 / 10%);
-}
-
-.dark {
-  --primary: #a987ff;
-  --secondary: #fd5d13;
-  --accent: #e4f50f;
-  --success: #c1e600;
-  --warning: #ff8142;
-  --error: #ff8142;
-  --text: #ffffff;
-  --text-offset: #fdb0bc;
-  --background: #0a353a;
-  --background-offset: #134f55;
-  --border: rgb(255 255 255 / 10%);
-}
-
-.unides-brand {
-  font-family: 'Playfair Display SC', serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.gradient-text {
-  @apply bg-clip-text text-transparent;
-  @apply bg-gradient-to-br from-primary via-purple-400 to-purple-600;
-}
-
 
 @layer base {
   *,
@@ -67,17 +34,6 @@ html {
   *::before,
   *::backdrop,
   ::file-selector-button {
-    border-color: var(--border);
     box-sizing: border-box;
-  }
-
-  html{
-    scroll-behavior: smooth;
-  }
-
-  body {
-    background-color: var(--background);
-    color: var(--text);
-    transition: background-color 0.2s ease, color 0.2s ease;
   }
 }

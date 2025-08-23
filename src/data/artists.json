@@ -1,10 +1,159 @@
 [
   {
-    "id": "OtavioFonseca",
-    "name": "Otavio Fonseca",
+    "id": "EveQueiroz",
     "enabled": true,
-    "joinedAt": "2025",
+    "joinedAt": "",
+    "artistType": "Creative",
+    "name": "Eve Queiroz",
+    "description": "Eve Queiroz is a Brazilian visual artist who has stood out for her creative trajectory, which moves between street art, illustration, tattoo and cannabis consultancy. She began her artistic career in 2009 with the Negahamburguer project, focused on graffiti, and over the years has expanded her work to other forms of expression, addressing social issues such as freedom of the body, blackness and women's rights. Her work reflects a strong connection with her identity and the search for freedom and social justice. Her most recent work integrates cannabis culture, and Eve also works as a consultant.",
+    "pronouns": "",
+    "pdfUrl": null,
+    "profilePic": "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Eve+Queiroz/_DSC5369.jpg",
+    "imgs": [
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Eve+Queiroz/_DSC5477.jpg",
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Eve+Queiroz/_DSC5488.jpg",
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Eve+Queiroz/_DSC5698.jpg"
+    ],
+    "location": { "city": "Berlin", "country": "" },
+    "socialLinks": {},
+    "roles": {
+      "tattooArtist": {
+        "type": "Tattoo Artist",
+        "tattooStyles": ["tattoo"],
+        "studioName": "",
+        "portfolioUrls": []
+      }
+    }
+  },
+  {
+    "id": "Hadryah",
+    "enabled": true,
+    "joinedAt": "",
+    "artistType": "Creative",
+    "name": "Hadryah",
+    "description": "A self-taught and multidisciplinary artist, they move fluidly between music, visual arts, upcycling, clothing customization, and performance. Their creations don't follow formulas — they emerge from a genuine impulse for expression, healing, and transformation. Each piece, each sound, each gesture carries the energy of someone who lives art as both therapy and a tool for expanding consciousness. Their brilliance shines through in the way they see possibilities where others see waste: garments are given new life in their hands, transformed with intention and care. Customization and material reuse are not just aesthetic choices, but a philosophy — a practice that blends sustainability, identity, and creative resistance. Whether on stage or in the studio, their presence is powerful, intuitive, and constantly evolving. With innovative ideas and a deep inner listening, they use art as a mirror and a portal — a path inward, outward, and toward the collective. Their journey is one of healing, and their language is art.",
+    "pronouns": "",
+    "pdfUrl": null,
+    "profilePic": "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Hadryah/WhatsApp+Image+2025-07-12+at+15.52.14+(1).jpeg",
+    "imgs": [
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Hadryah/WhatsApp+Image+2025-07-12+at+15.52.13.jpeg",
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Hadryah/WhatsApp+Image+2025-07-12+at+15.52.14+(1).jpeg",
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Hadryah/WhatsApp+Image+2025-07-12+at+15.52.14+(2).jpeg",
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Hadryah/WhatsApp+Image+2025-07-12+at+15.52.14+(3).jpeg",
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Hadryah/WhatsApp+Image+2025-07-12+at+15.52.14.jpeg"
+    ],
+    "location": { "city": "Berlin", "country": "" },
+    "socialLinks": {},
+    "roles": {
+      "musician": { "type": "Musician", "instrument": "", "genres": "", "videoUrl": [] }
+    }
+  },
+  {
+    "id": "HouseOfGrace",
+    "enabled": true,
+    "joinedAt": "",
+    "artistType": "Creative",
+    "name": "House Of Grace",
+    "description": "House of Grace is a DJ, producer, and curator with over 25 years of international experience. A Black, lesbian woman from Bahia, Brazil, she built her career in Berlin by bringing the sounds of Brazilian culture to the global stage. Having performed at major festivals in countries like Morocco and Uzbekistan, she now leads House Of Grace - a project rooted in house music, identity, and representation. A trailblazer in the LGBTQIAPN scene, Grace blends deep experience with bold vision and an inspiring story",
+    "pronouns": "",
+    "pdfUrl": null,
+    "profilePic": "https://unides.s3.eu-central-1.amazonaws.com/images/talents/House+of+Grace/Captura+de+Tela+2025-07-25+a%CC%80s+18.39.49.png",
+    "imgs": [
+      "https://www.youtube.com/watch?v=i2ooUALGaZo",
+      "https://www.youtube.com/watch?v=TyOzH5vabec"
+    ],
+    "location": { "city": "Berlin", "country": "" },
+    "socialLinks": {},
+    "roles": {
+      "musician": {
+        "type": "DJ",
+        "instrument": "",
+        "genres": "",
+        "videoUrl": [
+          "https://www.youtube.com/watch?v=i2ooUALGaZo",
+          "https://www.youtube.com/watch?v=TyOzH5vabec"
+        ]
+      }
+    }
+  },
+  {
+    "id": "Mallo",
+    "enabled": true,
+    "joinedAt": "",
+    "artistType": "Creative",
+    "name": "Mallo",
+    "description": "Fitness Trainer and Performer Mallo Santo brings extensive experience to the dance industry. Originally from Ceará in northeastern Brazil, Mallo has carved out a distinctive presence in Berlin's dance scene. Blending Brazilian and Caribbean influences, Mallo creates a dynamic and captivating repertoire that moves the Berlin audience. ",
+    "pronouns": "",
+    "pdfUrl": null,
+    "profilePic": "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Mallo/IMG_2359.jpg",
+    "imgs": [
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Mallo/IMG_2360.jpg"
+    ],
+    "location": { "city": "Berlin", "country": "" },
+    "socialLinks": {},
+    "roles": {
+      "dancer": { "type": "Dancer", "danceStyles": ["dancer"], "videoUrls": [] }
+    }
+  },
+  {
+    "id": "Mamede",
+    "enabled": true,
+    "joinedAt": "",
+    "artistType": "Creative",
+    "name": "Mamede",
+    "description": "Originally from Maranhão, Brazil, Mamede is a Berlin-based DJ whose sound bridges the vibrant pulse of the Brazilian Northeast with global dance floors. With past lives in Belém and São Paulo, and performances in cities like Tokyo, Amsterdam, Madrid, and Barcelona, Mamede brings a uniquely diasporic perspective to his sets.  Blending tribal, house, and disco, his music celebrates queer joy and cultural resilience. Mamede curates a monthly party in Berlin while continuously exploring new artistic and sonic territories.",
+    "pronouns": "",
+    "pdfUrl": null,
+    "profilePic": "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Mamede/drive-download-20250712T134016Z-1-001/mamede+1.jpeg",
+    "imgs": [
+      "https://www.youtube.com/live/xUa9-b5gCL",
+      "https://www.youtube.com/watch?v=3WEMfi2f2Ww"
+    ],
+    "location": { "city": "Berlin", "country": "" },
+    "socialLinks": {},
+    "roles": {
+      "dancer": {
+        "type": "Dancer",
+        "danceStyles": [],
+        "videoUrls": [
+          "https://www.youtube.com/live/xUa9-b5gCL",
+          "https://www.youtube.com/watch?v=3WEMfi2f2Ww"
+        ]
+      },
+      "musician": {
+        "type": "DJ",
+        "instrument": "",
+        "genres": "",
+        "videoUrl": [
+          "https://www.youtube.com/live/xUa9-b5gCL",
+          "https://www.youtube.com/watch?v=3WEMfi2f2Ww"
+        ]
+      }
+    }
+  },
+  {
+    "id": "Pilove",
+    "enabled": true,
+    "joinedAt": "",
+    "artistType": "Creative",
+    "name": "Pilove",
+    "description": "Brazilian artist Pilove forges a radical new sound where the sacred meets the synthetic. As both DJ and producer, he electrifies northern Brazil's rich musical heritage - particularly the ecstatic bounce of tecno brega and ceremonial pulse of Toré rhythms - with Berlin's industrial techno might.\nHis newly released KiLOVe album is a revelation: tribal tambores morph into distorted bass weapons, while womb-like frequencies embrace the listener in what becomes both club manifesto and spiritual journey. This is tropical futurism at its most potent - where Amazonian heat dissolves into concrete smoke, creating immersive experiences that honor queer resistance and ancestral memory alike.",
+    "pronouns": "",
+    "pdfUrl": null,
+    "profilePic": "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Pilove/IMG_2358.jpg",
+    "imgs": [],
+    "location": { "city": "Berlin", "country": "" },
+    "socialLinks": {},
+    "roles": {
+      "musician": { "type": "DJ", "instrument": "", "genres": "", "videoUrl": [] }
+    }
+  },
+  {
+    "id": "Otavio Fonseca",
+    "enabled": true,
+    "joinedAt": "",
     "artistType": "Talent",
+    "name": "Otavio Fonseca",
     "description": "",
     "pronouns": "",
     "pdfUrl": "https://unides.s3.eu-central-1.amazonaws.com/sedcards/_Portfolio+(7).pdf",
@@ -18,254 +167,136 @@
       "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Otavio+Fonseca/06.png",
       "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Otavio+Fonseca/04.png"
     ],
-    "location": {
-      "city": "Berlin",
-      "country": "DE"
-    },
-    "socialLinks": {
-      "website": "",
-      "instagram": "",
-      "linkedin": "",
-      "youtube": "",
-      "twitter": "",
-      "facebook": "",
-      "tiktok": "",
-      "behance": "",
-      "soundcloud": ""
-    },
+    "location": { "city": "Berlin", "country": "" },
+    "socialLinks": {},
     "roles": {
       "actor": {
         "type": "Model",
         "birthData": "2005",
-        "eyeColor": "Brown",
-        "hairColor": "Black",
+        "eyeColor": "brown",
+        "hairColor": "black",
         "shoeSize": "44",
         "dressSize": "38",
         "height": "174"
       },
-      "dancer": {
-        "type": "Dancer",
-        "danceStyles": [ "Contemporary", "Hip Hop", "Jazz" ],
-        "videoUrls": ""
+      "dancer": { "type": "Dancer", "danceStyles": ["dancer"], "videoUrls": [] }
+    }
+  },
+  {
+    "id": "angelo",
+    "enabled": true,
+    "joinedAt": "",
+    "artistType": "Talent",
+    "name": "Angelo",
+    "description": "",
+    "pronouns": "",
+    "pdfUrl": null,
+    "profilePic": "https://unides.s3.eu-central-1.amazonaws.com/images/talents/angelo/DSC07630.jpg",
+    "imgs": [
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/angelo/DSC07622.jpg",
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/angelo/DSC07391.jpg",
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/angelo/DSC07615.jpg",
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/angelo/DSC07688.jpg",
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/angelo/DSC07374.jpg"
+    ],
+    "location": { "city": "", "country": "" },
+    "socialLinks": {},
+    "roles": {
+      "actor": {
+        "type": "Model",
+        "birthData": "1988",
+        "eyeColor": "brown",
+        "hairColor": "dark brown",
+        "shoeSize": "43",
+        "dressSize": "40",
+        "height": "180"
+      }
+    }
+  },
+  {
+    "id": "bruna",
+    "enabled": true,
+    "joinedAt": "",
+    "artistType": "Talent",
+    "name": "Bruna",
+    "description": "",
+    "pronouns": "",
+    "pdfUrl": null,
+    "profilePic": "https://unides.s3.eu-central-1.amazonaws.com/images/talents/bruna+veiga/IMG_0495_bigger.jpg",
+    "imgs": [
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/bruna+veiga/DSC07529.jpg",
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/bruna+veiga/IMG_0572.jpg",
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/bruna+veiga/DSC07573.jpg",
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/bruna+veiga/IMG_0404.jpg"
+    ],
+    "location": { "city": "berlin", "country": "" },
+    "socialLinks": {},
+    "roles": {
+      "actor": {
+        "type": "Model",
+        "birthData": "1990",
+        "eyeColor": "brown",
+        "hairColor": "brown",
+        "shoeSize": "41",
+        "dressSize": "38",
+        "height": "185"
+      }
+    }
+  },
+  {
+    "id": "leticia",
+    "enabled": true,
+    "joinedAt": "",
+    "artistType": "Talent",
+    "name": "Leticia",
+    "description": "",
+    "pronouns": "",
+    "pdfUrl": null,
+    "profilePic": "https://unides.s3.eu-central-1.amazonaws.com/images/talents/leticia/DSC07491.jpg",
+    "imgs": [
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/leticia/DSC07430.jpg",
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/leticia/DSC07430.jpg",
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/leticia/DSC07505.jpg",
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/leticia/DSC07249.jpg",
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/leticia/DSC07506.jpg",
+      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/leticia/DSC07489.jpg"
+    ],
+    "location": { "city": "berlin", "country": "" },
+    "socialLinks": {},
+    "roles": {
+      "actor": {
+        "type": "Model",
+        "birthData": "1984",
+        "eyeColor": "black",
+        "hairColor": "black",
+        "shoeSize": "37",
+        "dressSize": "38",
+        "height": "160"
       }
     }
   },
   {
     "id": "marcelo",
-    "enabled": false,
+    "enabled": true,
     "joinedAt": "",
-    "artistType": "",
+    "artistType": "Talent",
     "name": "Marcelo",
     "description": "",
     "pronouns": "",
-    "pdfUrl": "",
-    "profilePic": "",
+    "pdfUrl": null,
+    "profilePic": "https://unides.s3.eu-central-1.amazonaws.com/images/talents/marcelo/DSC06851.jpg",
     "imgs": [],
-    "location": {
-      "city": "",
-      "country": ""
-    },
-    "socialLinks": {
-      "website": "",
-      "instagram": "",
-      "linkedin": "",
-      "youtube": "",
-      "twitter": "",
-      "facebook": "",
-      "tiktok": "",
-      "behance": "",
-      "soundcloud": ""
-    },
-    "roles": {}
-  },
-  {
-    "id": "EveQueiroz",
-    "enabled": true,
-    "joinedAt": "2025",
-    "artistType": "Creative",
-    "name": "Eve Queiroz",
-    "description": "Eve Queiroz is a Brazilian visual artist who has stood out for her creative trajectory, which moves between street art, illustration, tattoo and cannabis consultancy. She began her artistic career in 2009 with the Negahamburguer project, focused on graffiti, and over the years has expanded her work to other forms of expression, addressing social issues such as freedom of the body, blackness and women's rights. Her work reflects a strong connection with her identity and the search for freedom and social justice. Her most recent work integrates cannabis culture, and Eve also works as a consultant.",
-    "pronouns": "",
-    "pdfUrl": "",
-    "profilePic": "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Eve+Queiroz/_DSC5369.jpg",
-    "imgs": [
-      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Eve+Queiroz/_DSC5477.jpg",
-      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Eve+Queiroz/_DSC5488.jpg",
-      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Eve+Queiroz/_DSC5698.jpg"
-    ],
-    "location": {
-      "city": "Berlin",
-      "country": "DE"
-    },
-    "socialLinks": {
-      "website": "",
-      "instagram": "",
-      "linkedin": "",
-      "youtube": "",
-      "twitter": "",
-      "facebook": "",
-      "tiktok": "",
-      "behance": "https://www.behance.net/evelynqueiroz?",
-      "soundcloud": ""
-    },
-    "roles": {}
-  },
-  {
-    "id": "Hadryah",
-    "enabled": true,
-    "joinedAt": "2005",
-    "artistType": "Creative",
-    "name": "Hadryah",
-    "description": "A self-taught and multidisciplinary artist, they move fluidly between music, visual arts, upcycling, clothing customization, and performance. Their creations don't follow formulas — they emerge from a genuine impulse for expression, healing, and transformation. Each piece, each sound, each gesture carries the energy of someone who lives art as both therapy and a tool for expanding consciousness. Their brilliance shines through in the way they see possibilities where others see waste: garments are given new life in their hands, transformed with intention and care. Customization and material reuse are not just aesthetic choices, but a philosophy — a practice that blends sustainability, identity, and creative resistance. Whether on stage or in the studio, their presence is powerful, intuitive, and constantly evolving. With innovative ideas and a deep inner listening, they use art as a mirror and a portal — a path inward, outward, and toward the collective. Their journey is one of healing, and their language is art.",
-    "pronouns": "",
-    "pdfUrl": "",
-    "profilePic": "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Hadryah/WhatsApp+Image+2025-07-12+at+15.52.14+(1).jpeg",
-    "imgs": [
-      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Hadryah/WhatsApp+Image+2025-07-12+at+15.52.13.jpeg",
-      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Hadryah/WhatsApp+Image+2025-07-12+at+15.52.14+(1).jpeg",
-      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Hadryah/WhatsApp+Image+2025-07-12+at+15.52.14+(2).jpeg",
-      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Hadryah/WhatsApp+Image+2025-07-12+at+15.52.14+(3).jpeg",
-      "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Hadryah/WhatsApp+Image+2025-07-12+at+15.52.14.jpeg"
-    ],
-    "location": {
-      "city": "Berlin",
-      "country": "DE"
-    },
-    "socialLinks": {
-      "website": "",
-      "instagram": "",
-      "linkedin": "",
-      "youtube": "",
-      "twitter": "",
-      "facebook": "",
-      "tiktok": "",
-      "behance": "",
-      "soundcloud": ""
-    },
-    "roles": {}
-  },
-  {
-    "id": "HouseOfGrace",
-    "enabled": true,
-    "joinedAt": "",
-    "artistType": "",
-    "name": "House Of Grace",
-    "description": "House of Grace is a DJ, producer, and curator with over 25 years of international experience. A Black, lesbian woman from Bahia, Brazil, she built her career in Berlin by bringing the sounds of Brazilian culture to the global stage. Having performed at major festivals in countries like Morocco and Uzbekistan, she now leads House Of Grace - a project rooted in house music, identity, and representation. A trailblazer in the LGBTQIAPN scene, Grace blends deep experience with bold vision and an inspiring story",
-    "pronouns": "",
-    "pdfUrl": "",
-    "profilePic": "https://unides.s3.eu-central-1.amazonaws.com/images/talents/House+of+Grace/Captura+de+Tela+2025-07-25+a%CC%80s+18.39.49.png",
-    "imgs": [
-      "https://www.youtube.com/watch?v=i2ooUALGaZo",
-      "https://www.youtube.com/watch?v=TyOzH5vabec"
-    ],
-    "location": {
-      "city": "Berlin",
-      "country": ""
-    },
-    "socialLinks": {
-      "website": "",
-      "instagram": "",
-      "linkedin": "",
-      "youtube": "",
-      "twitter": "",
-      "facebook": "",
-      "tiktok": "",
-      "behance": "",
-      "soundcloud": "https://soundcloud.com/houseof_grace/radio-veneno"
-    },
-    "roles": {}
-  },
-  {
-    "id": "Mallo",
-    "enabled": true,
-    "joinedAt": "",
-    "artistType": "",
-    "name": "Mallo",
-    "description": "Fitness Trainer and Performer Mallo Santo brings extensive experience to the dance industry. Originally from Ceará in northeastern Brazil, Mallo has carved out a distinctive presence in Berlin's dance scene. Blending Brazilian and Caribbean influences, Mallo creates a dynamic and captivating repertoire that moves the Berlin audience. ",
-    "pronouns": "",
-    "pdfUrl": "",
-    "profilePic": "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Mallo/IMG_2359.jpg",
-    "imgs": ["https://unides.s3.eu-central-1.amazonaws.com/images/talents/Mallo/IMG_2360.jpg"],
-    "location": {
-      "city": "Berlin",
-      "country": "DE"
-    },
-    "socialLinks": {
-      "website": "",
-      "instagram": "",
-      "linkedin": "",
-      "youtube": "",
-      "twitter": "",
-      "facebook": "",
-      "tiktok": "",
-      "behance": "",
-      "soundcloud": ""
-    },
-    "roles": {}
-  },
-  {
-    "id": "Mamede",
-    "enabled": true,
-    "joinedAt": "",
-    "artistType": "",
-    "name": "Mamede",
-    "description": "Originally from Maranhão, Brazil, Mamede is a Berlin-based DJ whose sound bridges the vibrant pulse of the Brazilian Northeast with global dance floors. With past lives in Belém and São Paulo, and performances in cities like Tokyo, Amsterdam, Madrid, and Barcelona, Mamede brings a uniquely diasporic perspective to his sets.  Blending tribal, house, and disco, his music celebrates queer joy and cultural resilience. Mamede curates a monthly party in Berlin while continuously exploring new artistic and sonic territories.",
-    "pronouns": "",
-    "pdfUrl": "",
-    "profilePic": "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Mamede/drive-download-20250712T134016Z-1-001/mamede+1.jpeg",
-    "imgs": [
-      "https://www.youtube.com/live/xUa9-b5gCL",
-      "https://www.youtube.com/watch?v=3WEMfi2f2Ww"
-    ],
-    "location": {
-      "city": "Berlin",
-      "country": "DE"
-    },
-    "socialLinks": {
-      "website": "",
-      "instagram": "",
-      "linkedin": "",
-      "youtube": "",
-      "twitter": "",
-      "facebook": "",
-      "tiktok": "",
-      "behance": "",
-      "soundcloud": "https://soundcloud.com/edgeberlin/miss-cis-you-think-youre-fierce-mamede-edge-mix-010"
-    },
-    "roles": {}
-  },
-  {
-    "id": "Pilove",
-    "enabled": true,
-    "joinedAt": "",
-    "artistType": "Creative",
-    "name": "Pilove",
-    "description": "Brazilian artist Pilove forges a radical new sound where the sacred meets the synthetic. As both DJ and producer, he electrifies northern Brazil's rich musical heritage - particularly the ecstatic bounce of tecno brega and ceremonial pulse of Toré rhythms - with Berlin's industrial techno might. His newly released KiLOVe album is a revelation: tribal tambores morph into distorted bass weapons, while womb-like frequencies embrace the listener in what becomes both club manifesto and spiritual journey. This is tropical futurism at its most potent - where Amazonian heat dissolves into concrete smoke, creating immersive experiences that honor queer resistance and ancestral memory alike.",
-    "pronouns": "",
-    "pdfUrl": "",
-    "profilePic": "https://unides.s3.eu-central-1.amazonaws.com/images/talents/Pilove/IMG_2358.jpg",
-    "imgs": ["https://unides.s3.eu-central-1.amazonaws.com/images/talents/Pilove/IMG_2358.jpg"],
-    "location": {
-      "city": "Berlin",
-      "country": "DE"
-    },
-    "socialLinks": {
-      "website": "",
-      "instagram": "",
-      "linkedin": "",
-      "youtube": "",
-      "twitter": "",
-      "facebook": "",
-      "tiktok": "",
-      "behance": "",
-      "soundcloud": ""
-    },
+    "location": { "city": "", "country": "" },
+    "socialLinks": {},
     "roles": {
-      "musician": {
-        "type": "DJ",
-        "instruments": "Synthesizers, Drum Machines",
-        "genres": "Tecno Brega, Toré, Industrial Techno",
-        "videoUrl": ""
+      "actor": {
+        "type": "Model",
+        "birthData": "1988",
+        "eyeColor": "black",
+        "hairColor": "",
+        "shoeSize": "46",
+        "dressSize": "40",
+        "height": "188"
       }
     }
   }

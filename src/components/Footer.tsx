@@ -8,90 +8,166 @@ const links = [
   {
     url: "https://instagram.com/unidesagency",
     description: "Follow Unides on Instagram",
-    icon: "",
+    icon: (
+      <svg
+        width="27"
+        height="27"
+        viewBox="0 0 27 27"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 27L1.89787 20.0666C0.726748 18.0371 0.111375 15.7365 0.1125 13.3774C0.115875 6.00187 6.11774 0 13.4921 0C17.0707 0.001125 20.43 1.395 22.9567 3.924C25.4823 6.453 26.8728 9.8145 26.8717 13.3898C26.8683 20.7664 20.8665 26.7683 13.4921 26.7683C11.2534 26.7671 9.04723 26.2058 7.09311 25.1393L0 27ZM7.42161 22.7171C9.3071 23.8365 11.1071 24.507 13.4876 24.5081C19.6166 24.5081 24.6093 19.5199 24.6127 13.3875C24.6149 7.24275 19.6458 2.26125 13.4966 2.259C7.36311 2.259 2.37374 7.24725 2.37149 13.3785C2.37037 15.8816 3.10387 17.7559 4.33574 19.7167L3.21187 23.8207L7.42161 22.7171ZM20.232 16.5701C20.1487 16.4306 19.926 16.3474 19.5907 16.1798C19.2566 16.0121 17.613 15.2032 17.3058 15.0919C16.9998 14.9805 16.7771 14.9243 16.5532 15.2595C16.3305 15.5936 15.6892 16.3474 15.4946 16.5701C15.3 16.7929 15.1042 16.821 14.7701 16.6534C14.436 16.4858 13.3582 16.1336 12.0813 14.994C11.088 14.1075 10.4164 13.0129 10.2217 12.6776C10.0271 12.3435 10.2015 12.1624 10.368 11.9959C10.5187 11.8463 10.7021 11.6055 10.8697 11.4097C11.0396 11.2163 11.0947 11.0768 11.2072 10.8529C11.3186 10.6301 11.2635 10.4344 11.1791 10.2668C11.0947 10.1003 10.4265 8.45438 10.1486 7.785C9.87635 7.13363 9.60073 7.22137 9.39598 7.21125L8.75473 7.2C8.53198 7.2 8.16973 7.28325 7.86373 7.6185C7.55773 7.95375 6.69374 8.7615 6.69374 10.4074C6.69374 12.0533 7.89186 13.6429 8.05836 13.8656C8.22598 14.0884 10.4152 17.4656 13.7688 18.9135C14.5665 19.2577 15.1897 19.4636 15.6746 19.6178C16.4756 19.872 17.2046 19.836 17.7806 19.7505C18.423 19.6549 19.7583 18.9416 20.0373 18.1609C20.3163 17.379 20.3163 16.7096 20.232 16.5701Z"
+          fill="white"
+        />
+      </svg>
+    ),
   },
   {
     url: "https://wa.me/1728027395",
     description: "Contact Unides on WhatsApp",
-    icon: "",
+    icon: (
+      <svg
+        width="27"
+        height="27"
+        viewBox="0 0 27 27"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g clipPath="url(#clip0_124_442)">
+          <path
+            d="M13.5 2.43105C17.107 2.43105 17.5342 2.44687 18.9527 2.51016C20.2711 2.56816 20.983 2.78965 21.4576 2.97422C22.0852 3.2168 22.5387 3.51211 23.008 3.98145C23.4826 4.45605 23.7727 4.9043 24.0152 5.53184C24.1998 6.00645 24.4213 6.72363 24.4793 8.03672C24.5426 9.46055 24.5584 9.8877 24.5584 13.4895C24.5584 17.0965 24.5426 17.5236 24.4793 18.9422C24.4213 20.2605 24.1998 20.9725 24.0152 21.4471C23.7727 22.0746 23.4773 22.5281 23.008 22.9975C22.5334 23.4721 22.0852 23.7621 21.4576 24.0047C20.983 24.1893 20.2658 24.4107 18.9527 24.4688C17.5289 24.532 17.1018 24.5479 13.5 24.5479C9.89297 24.5479 9.46582 24.532 8.04727 24.4688C6.72891 24.4107 6.01699 24.1893 5.54238 24.0047C4.91484 23.7621 4.46133 23.4668 3.99199 22.9975C3.51738 22.5229 3.22734 22.0746 2.98477 21.4471C2.8002 20.9725 2.57871 20.2553 2.5207 18.9422C2.45742 17.5184 2.4416 17.0912 2.4416 13.4895C2.4416 9.88242 2.45742 9.45527 2.5207 8.03672C2.57871 6.71836 2.8002 6.00645 2.98477 5.53184C3.22734 4.9043 3.52266 4.45078 3.99199 3.98145C4.4666 3.50684 4.91484 3.2168 5.54238 2.97422C6.01699 2.78965 6.73418 2.56816 8.04727 2.51016C9.46582 2.44687 9.89297 2.43105 13.5 2.43105ZM13.5 0C9.83496 0 9.37617 0.0158203 7.93652 0.0791016C6.50215 0.142383 5.51602 0.374414 4.66172 0.706641C3.77051 1.05469 3.01641 1.51348 2.26758 2.26758C1.51348 3.01641 1.05469 3.77051 0.706641 4.65645C0.374414 5.51602 0.142383 6.49687 0.0791016 7.93125C0.0158203 9.37617 0 9.83496 0 13.5C0 17.165 0.0158203 17.6238 0.0791016 19.0635C0.142383 20.4979 0.374414 21.484 0.706641 22.3383C1.05469 23.2295 1.51348 23.9836 2.26758 24.7324C3.01641 25.4813 3.77051 25.9453 4.65645 26.2881C5.51602 26.6203 6.49688 26.8523 7.93125 26.9156C9.3709 26.9789 9.82969 26.9947 13.4947 26.9947C17.1598 26.9947 17.6186 26.9789 19.0582 26.9156C20.4926 26.8523 21.4787 26.6203 22.333 26.2881C23.2189 25.9453 23.973 25.4813 24.7219 24.7324C25.4707 23.9836 25.9348 23.2295 26.2775 22.3436C26.6098 21.484 26.8418 20.5031 26.9051 19.0688C26.9684 17.6291 26.9842 17.1703 26.9842 13.5053C26.9842 9.84023 26.9684 9.38145 26.9051 7.9418C26.8418 6.50742 26.6098 5.52129 26.2775 4.66699C25.9453 3.77051 25.4865 3.01641 24.7324 2.26758C23.9836 1.51875 23.2295 1.05469 22.3436 0.711914C21.484 0.379687 20.5031 0.147656 19.0688 0.084375C17.6238 0.0158203 17.165 0 13.5 0Z"
+            fill="white"
+          />
+          <path
+            d="M13.5 6.56543C9.67148 6.56543 6.56543 9.67148 6.56543 13.5C6.56543 17.3285 9.67148 20.4346 13.5 20.4346C17.3285 20.4346 20.4346 17.3285 20.4346 13.5C20.4346 9.67148 17.3285 6.56543 13.5 6.56543ZM13.5 17.9982C11.0162 17.9982 9.00176 15.9838 9.00176 13.5C9.00176 11.0162 11.0162 9.00176 13.5 9.00176C15.9838 9.00176 17.9982 11.0162 17.9982 13.5C17.9982 15.9838 15.9838 17.9982 13.5 17.9982Z"
+            fill="white"
+          />
+          <path
+            d="M22.3277 6.29107C22.3277 7.18755 21.6 7.91001 20.7088 7.91001C19.8123 7.91001 19.0898 7.18228 19.0898 6.29107C19.0898 5.39458 19.8176 4.67212 20.7088 4.67212C21.6 4.67212 22.3277 5.39985 22.3277 6.29107Z"
+            fill="white"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_124_442">
+            <rect width="27" height="27" fill="white" />
+          </clipPath>
+        </defs>
+      </svg>
+    ),
   },
   {
     url: "https://www.youtube.com/@UnidesAgency",
     description: "Watch Unides on YouTube",
-    icon: "",
+    icon: (
+      <svg
+        width="31"
+        height="31"
+        viewBox="0 0 31 31"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M30.6912 9.29995C30.6912 9.29995 30.3885 7.16265 29.4561 6.22417C28.2754 4.98901 26.9555 4.98296 26.35 4.9103C22.0148 4.59546 15.5061 4.59546 15.5061 4.59546H15.4939C15.4939 4.59546 8.98516 4.59546 4.65 4.9103C4.04453 4.98296 2.72461 4.98901 1.54395 6.22417C0.611524 7.16265 0.314844 9.29995 0.314844 9.29995C0.314844 9.29995 0 11.8126 0 14.3193V16.6685C0 19.1751 0.308789 21.6878 0.308789 21.6878C0.308789 21.6878 0.611523 23.8251 1.53789 24.7636C2.71855 25.9988 4.26855 25.9564 4.95879 26.0896C7.44121 26.3257 15.5 26.3984 15.5 26.3984C15.5 26.3984 22.0148 26.3863 26.35 26.0775C26.9555 26.0048 28.2754 25.9988 29.4561 24.7636C30.3885 23.8251 30.6912 21.6878 30.6912 21.6878C30.6912 21.6878 31 19.1812 31 16.6685V14.3193C31 11.8126 30.6912 9.29995 30.6912 9.29995ZM12.2971 19.5203V10.8076L20.6707 15.1791L12.2971 19.5203Z"
+          fill="white"
+        />
+      </svg>
+    ),
   },
+];
+
+const NAV_ITEMS = [
+  { label: "talents", href: "#talents" },
+  { label: "about us", href: "#about" },
+  { label: "team", href: "#team" },
+  { label: "contact", href: "#contact" },
+  { label: "impressum", href: "/impressum" },
 ];
 
 export default function Footer() {
   return (
     <footer
       className={cn(
-        "flex flex-col min-h-64 py-8 items-center justify-center overflow-hidden relative",
-        "bg-gradient-to-br from-blue-900/40 via-purple-900/40 to-slate-900/40"
+        "flex flex-col gap-8 py-12",
+        "bg-gradient-to-b from-unides-green to-unides-green-dark"
       )}
     >
-      {/* Logo at top for mobile, bottom right for desktop is replaced with top center */}
-      <div className="absolute top-4 left-4 sm:top-auto sm:left-auto sm:bottom-8 sm:right-8">
-        <Image
-          src="/unides_agency_orange.png"
-          alt="Unides"
-          className="h-12 sm:h-16 w-auto"
-          width={200}
-          height={50}
-        />
-      </div>
+      <div className="w-full flex items-center justify-around flex-wrap gap-8 ">
+        <div className="max-w-md flex flex-col gap-4">
+          <Image src="/unides_lime.png" alt="Unides" width={200} height={50} />
+          {NAV_ITEMS.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="text-xl text-unides-gray hover:underline mx-4"
+            >
+              {item.label}
+            </Link>
+          ))}
 
-      {/* Main content container */}
-      <div className="flex flex-col items-center justify-center space-y-6 w-full max-w-lg mx-auto px-4 py-8 sm:py-0">
-        {/* Header text */}
-        <div className="text-center">
-          <h3 className="text-base sm:text-lg font-medium text-white/90 mb-1">{`Let's connect.`}</h3>
-          <p className="text-sm text-white/80">Follow us and say hi.</p>
+          <ul className="flex items-center gap-4">
+            {links.map((link) => {
+              return (
+                <li className="flex-shrink-0" key={link.url}>
+                  <Link
+                    className={cn(
+                      "flex size-12 p-2 items-center justify-center rounded-full  ",
+                      "hover:scale-110 hover:bg-white/10 transition-all duration-200 ease-in-out"
+                    )}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={link.description}
+                  >
+                    <span className="sr-only">{link.description}</span>
+                    {link.icon}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
         </div>
 
-        {/* Social links */}
-        <ul className="flex justify-center items-center gap-4 sm:gap-6 w-full">
-          {links.map((link) => {
-            // const IconComp = link.icon;
-            return (
-              <li className="flex-shrink-0" key={link.url}>
-                <Link
-                  className={cn(
-                    "flex size-12 sm:size-16 items-center justify-center rounded-full border-2 border-current p-3 sm:p-4",
-                    "hover:scale-110 hover:bg-white/10 transition-all duration-200 ease-in-out"
-                  )}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title={link.description
-                    .replace("Follow Unides on ", "")
-                    .replace("Contact Unides on ", "")
-                    .replace("Watch Unides on ", "")}
-                >
-                  <span className="sr-only">{link.description}</span>
-                  {/* <IconComp className="size-full" /> */}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        <div className="max-w-xs flex flex-col gap-8 ">
+          <p className="text-white text-2xl">Subscribe to keep up with the latest news</p>
 
-        {/* Legal links */}
-        <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-4 text-xs sm:text-sm text-white/60">
-          <a href="/impressum" className="hover:text-white/80 transition-colors whitespace-nowrap">
-            Impressum
-          </a>
-          <span className="hidden sm:inline">•</span>
-          <a href="/privacy" className="hover:text-white/80 transition-colors whitespace-nowrap">
-            Privacy Policy
-          </a>
+          <div className="flex bg-white rounded-lg">
+            <input
+              type="email"
+              className="bg-white flex-1 rounded-sm px-4 focus:outline-none"
+              placeholder="enter your email..."
+            />
+            <button
+              type="button"
+              className="bg-unides-lime p-4 rounded-sm cursor-pointer hover:scale-105 transition-all duration-200 ease-in-out"
+            >
+              <svg
+                width="28"
+                height="16"
+                viewBox="0 0 28 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M27.7071 8.7071C28.0976 8.31658 28.0976 7.68342 27.7071 7.29289L21.3431 0.92893C20.9526 0.538406 20.3195 0.538406 19.9289 0.92893C19.5384 1.31945 19.5384 1.95262 19.9289 2.34314L25.5858 8L19.9289 13.6569C19.5384 14.0474 19.5384 14.6805 19.9289 15.0711C20.3195 15.4616 20.9526 15.4616 21.3431 15.0711L27.7071 8.7071ZM8.74228e-08 9L27 9L27 7L-8.74228e-08 7L8.74228e-08 9Z"
+                  fill="#575757"
+                />
+              </svg>
+            </button>
+          </div>
+          <p className="text-white text">
+            by submitting this form,you acknowledge that you have the terms of our{" "}
+            <Link className="underline" href="/privacy">
+              Privacy Statement
+            </Link>
+          </p>
         </div>
-
-        {/* Copyright */}
-        <p className="text-xs sm:text-sm text-white/70 text-center">
-          © {new Date().getFullYear()} Unides. All rights reserved.
-        </p>
       </div>
+
+      {/* Copyright */}
+      <p className="text-xs sm:text-sm text-white/70 text-center">
+        Copyright © Unides Agency {new Date().getFullYear()}
+      </p>
     </footer>
   );
 }
