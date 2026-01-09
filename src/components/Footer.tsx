@@ -75,11 +75,11 @@ const links = [
 ];
 
 const NAV_ITEMS = [
-  { label: "talents", href: "#talents" },
-  { label: "about us", href: "#about" },
-  { label: "team", href: "#team" },
-  { label: "contact", href: "#contact" },
-  { label: "impressum", href: "/impressum" },
+  { label: "Talents", href: "#talents" },
+  { label: "About us", href: "#about" },
+  { label: "Team", href: "#team" },
+  { label: "Contact", href: "#contact" },
+  { label: "Impressum", href: "/impressum" },
 ];
 
 export default function Footer() {

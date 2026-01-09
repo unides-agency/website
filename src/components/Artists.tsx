@@ -85,7 +85,7 @@ export default function Artists({ artists }: { artists: Artist[] }) {
       id="talents"
       title="talents"
       subtitle="Discover our exceptional talent & creative pool ready to bring your vision to life."
-      accentColor="unides-lime"
+      accentColor="unides-purple"
       bgColor="white"
     >
       <div className="flex flex-wrap gap-3 sm:gap-4 md:gap-8 mb-8 justify-center">
@@ -141,7 +141,7 @@ export default function Artists({ artists }: { artists: Artist[] }) {
                   priority={false}
                 />
                 {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-black/10" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
                 {/* Content overlay */}
                 <div className="absolute inset-0 flex flex-col justify-end p-3 sm:p-4 text-white">
                   <h3 className="font-jaro text-lg sm:text-xl leading-tight drop-shadow-sm">{artist.name}</h3>
@@ -171,7 +171,7 @@ export default function Artists({ artists }: { artists: Artist[] }) {
       {/* Inline modal implementation when ?artist=id is present */}
       {selectedArtist ? (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-2 sm:p-4 backdrop-blur-md animate-in fade-in duration-200"
+          className="fixed inset-0 z-40 flex items-center justify-center bg-black/60 p-2 sm:p-4 backdrop-blur-md animate-in fade-in duration-200"
           onClick={closeModal}
           aria-hidden={false}
         >
@@ -200,7 +200,7 @@ export default function Artists({ artists }: { artists: Artist[] }) {
                 {/* 2-column grid: Profile pic and info section */}
                 <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                   {/* Profile Picture */}
-                  <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 shadow-lg">
+                  <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-linear-to-br from-gray-100 to-gray-200 shadow-lg">
                     <Image
                       src={selectedArtist.profilePic}
                       alt={selectedArtist.name}
@@ -219,7 +219,7 @@ export default function Artists({ artists }: { artists: Artist[] }) {
                         {selectedArtist.name}
                       </h2>
                       <div className="flex items-center gap-2 text-gray-600 mb-3">
-                        <svg className="h-4 w-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
@@ -244,7 +244,7 @@ export default function Artists({ artists }: { artists: Artist[] }) {
                     {selectedArtist.roles && Object.keys(selectedArtist.roles).length > 0 && (
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                          <svg className="h-5 w-5 text-unides-purple flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <svg className="h-5 w-5 text-unides-purple shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                           </svg>
                           Roles & Skills
@@ -271,7 +271,7 @@ export default function Artists({ artists }: { artists: Artist[] }) {
                     {Object.entries(selectedArtist.socialLinks).filter(([, v]) => !!v).length > 0 && (
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                          <svg className="h-5 w-5 text-unides-purple flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <svg className="h-5 w-5 text-unides-purple shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                           </svg>
                           Connect
@@ -285,7 +285,7 @@ export default function Artists({ artists }: { artists: Artist[] }) {
                                 href={v as string}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="px-4 py-2 rounded-lg text-sm font-medium bg-gradient-to-r from-unides-purple to-unides-purple/80 text-white hover:from-unides-purple/90 hover:to-unides-purple/70 transition-all hover:scale-105 shadow-sm hover:shadow-md"
+                                className="px-4 py-2 rounded-lg text-sm font-medium bg-linear-to-r from-unides-purple to-unides-purple/80 text-white hover:from-unides-purple/90 hover:to-unides-purple/70 transition-all hover:scale-105 shadow-sm hover:shadow-md"
                               >
                                 {k.charAt(0).toUpperCase() + k.slice(1)}
                               </a>
@@ -303,7 +303,7 @@ export default function Artists({ artists }: { artists: Artist[] }) {
                           rel="noopener noreferrer"
                           className="flex items-center justify-center gap-2 w-full rounded-lg bg-unides-lime px-6 py-3 text-base font-semibold text-gray-900 hover:bg-unides-lime/90 transition-all hover:scale-[1.02] shadow-md hover:shadow-lg"
                         >
-                          <svg className="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <svg className="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                           </svg>
                           Download Portfolio PDF
@@ -317,7 +317,7 @@ export default function Artists({ artists }: { artists: Artist[] }) {
                 {selectedArtist.description && (
                   <div className="border-t border-gray-200 pt-8">
                     <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                      <svg className="h-5 w-5 text-unides-purple flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="h-5 w-5 text-unides-purple shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                       </svg>
                       About
@@ -332,7 +332,7 @@ export default function Artists({ artists }: { artists: Artist[] }) {
                 {selectedArtist.imgs && selectedArtist.imgs.length > 0 && (
                   <div className="border-t border-gray-200 pt-8">
                     <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                      <svg className="h-5 w-5 text-unides-purple flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="h-5 w-5 text-unides-purple shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                       </svg>
                       Gallery
@@ -372,7 +372,7 @@ export default function Artists({ artists }: { artists: Artist[] }) {
       {/* Lightbox Modal for Full-Resolution Images */}
       {lightboxImage && (
         <div
-          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm animate-in fade-in duration-200"
           onClick={() => setLightboxImage(null)}
           aria-hidden={false}
         >

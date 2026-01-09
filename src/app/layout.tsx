@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(`${outfit.className}`, "selection:bg-unides-purple-dark")}>
+      <body className={cn(`${outfit.variable} ${jaro.variable}`, outfit.className, "selection:bg-unides-purple-dark")}>
         <Navbar />
         {children}
         <Footer />
