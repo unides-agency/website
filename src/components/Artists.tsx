@@ -12,6 +12,9 @@ export default function Artists({ artists }: { artists: Artist[] }) {
   // React 19: useTransition for non-blocking filter updates
   const [isPending, startTransition] = useTransition();
   const [activeFilter, setActiveFilter] = useState<(typeof FILTERS)[number]>("All");
+  
+  // lightbox state for full-resolution images
+  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
 
   // modal + routing logic
   const router = useRouter();
@@ -30,15 +33,19 @@ export default function Artists({ artists }: { artists: Artist[] }) {
 
   // esc key handler
   useEffect(() => {
-    if (!selectedArtist) return;
+    if (!selectedArtist && !lightboxImage) return;
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        router.push(pathname, { scroll: false });
+        if (lightboxImage) {
+          setLightboxImage(null);
+        } else {
+          router.push(pathname, { scroll: false });
+        }
       }
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [selectedArtist, pathname, router]);
+  }, [selectedArtist, lightboxImage, pathname, router]);
 
   // React 19: Direct computation without useMemo - compiler handles optimization
   const filteredArtists =
@@ -164,88 +171,239 @@ export default function Artists({ artists }: { artists: Artist[] }) {
       {/* Inline modal implementation when ?artist=id is present */}
       {selectedArtist ? (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-2 sm:p-4 backdrop-blur-md animate-in fade-in duration-200"
           onClick={closeModal}
           aria-hidden={false}
         >
           <div
-            className="relative w-full max-w-3xl rounded-xl bg-white shadow-xl overflow-hidden"
+            className="relative w-full max-w-6xl max-h-[95vh] sm:max-h-[90vh] rounded-2xl bg-white shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300 flex flex-col"
             role="dialog"
             aria-modal="true"
             aria-label={`${selectedArtist.name} details`}
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Close button */}
             <button
               type="button"
               onClick={closeModal}
-              className="absolute right-3 top-3 rounded-full bg-gray-200 px-2 py-1 text-sm hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-unides-purple"
+              className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 backdrop-blur-sm text-gray-700 shadow-lg transition-all hover:bg-white hover:scale-110 hover:text-unides-purple focus:outline-none focus:ring-2 focus:ring-unides-purple focus:ring-offset-2"
               aria-label="Close"
             >
-              ✕
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
             </button>
-            <div className="grid gap-6 md:grid-cols-2">
-              <div className="relative aspect-square w-full bg-gray-100">
-                <Image
-                  src={selectedArtist.profilePic}
-                  alt={selectedArtist.name}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6 flex flex-col gap-4 max-h-[80vh] overflow-y-auto">
-                <div>
-                  <h2 className="text-2xl font-bold mb-1">{selectedArtist.name}</h2>
-                  <p className="text-sm text-gray-500">{selectedArtist.location.city}, {selectedArtist.location.country}</p>
-                </div>
-                <p className="text-sm leading-relaxed whitespace-pre-line">{selectedArtist.description}</p>
-                {/* Roles summary */}
-                {selectedArtist.roles ? (
-                  <div className="space-y-2">
-                    <h3 className="text-lg font-semibold">Roles</h3>
-                    <ul className="list-disc ml-5 text-sm space-y-1">
-                      {Object.values(selectedArtist.roles)
-                        .filter((r): r is RoleUnion => {
-                          if (!r) return false;
-                          return typeof (r as { type?: unknown }).type === "string";
-                        })
-                        .map((r) => <li key={r.type}>{r.type}</li>)}
-                    </ul>
+
+            {/* Scrollable content */}
+            <div className="overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+              <div className="p-6 md:p-8 space-y-8">
+                {/* 2-column grid: Profile pic and info section */}
+                <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+                  {/* Profile Picture */}
+                  <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 shadow-lg">
+                    <Image
+                      src={selectedArtist.profilePic}
+                      alt={selectedArtist.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      priority
+                    />
                   </div>
-                ) : null}
-                {/* Social Links */}
-                <div className="space-y-2">
-                  <h3 className="text-lg font-semibold">Social</h3>
-                  <div className="flex flex-wrap gap-2 text-sm">
-                    {Object.entries(selectedArtist.socialLinks)
-                      .filter(([, v]) => !!v)
-                      .map(([k, v]) => (
+
+                  {/* Info Section */}
+                  <div className="flex flex-col gap-6">
+                    {/* Header */}
+                    <div className="border-b border-gray-200 pb-4">
+                      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2 font-jaro leading-tight">
+                        {selectedArtist.name}
+                      </h2>
+                      <div className="flex items-center gap-2 text-gray-600 mb-3">
+                        <svg className="h-4 w-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <p className="text-sm font-medium">
+                          {selectedArtist.location.city}, {selectedArtist.location.country}
+                        </p>
+                        {getBirthYear(selectedArtist) && (
+                          <>
+                            <span className="text-gray-400">•</span>
+                            <p className="text-sm">{getBirthYear(selectedArtist)}</p>
+                          </>
+                        )}
+                      </div>
+                      <div>
+                        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-unides-purple/10 text-unides-purple">
+                          {selectedArtist.artistType}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Roles */}
+                    {selectedArtist.roles && Object.keys(selectedArtist.roles).length > 0 && (
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                          <svg className="h-5 w-5 text-unides-purple flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                          Roles & Skills
+                        </h3>
+                        <div className="flex flex-wrap gap-2">
+                          {Object.values(selectedArtist.roles)
+                            .filter((r): r is RoleUnion => {
+                              if (!r) return false;
+                              return typeof (r as { type?: unknown }).type === "string";
+                            })
+                            .map((r) => (
+                              <span
+                                key={r.type}
+                                className="px-3 py-1.5 rounded-lg text-sm font-medium bg-gray-100 text-gray-800 hover:bg-gray-200 transition-colors"
+                              >
+                                {r.type}
+                              </span>
+                            ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Social Links */}
+                    {Object.entries(selectedArtist.socialLinks).filter(([, v]) => !!v).length > 0 && (
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                          <svg className="h-5 w-5 text-unides-purple flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                          </svg>
+                          Connect
+                        </h3>
+                        <div className="flex flex-wrap gap-2">
+                          {Object.entries(selectedArtist.socialLinks)
+                            .filter(([, v]) => !!v)
+                            .map(([k, v]) => (
+                              <a
+                                key={k}
+                                href={v as string}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="px-4 py-2 rounded-lg text-sm font-medium bg-gradient-to-r from-unides-purple to-unides-purple/80 text-white hover:from-unides-purple/90 hover:to-unides-purple/70 transition-all hover:scale-105 shadow-sm hover:shadow-md"
+                              >
+                                {k.charAt(0).toUpperCase() + k.slice(1)}
+                              </a>
+                            ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* PDF Download */}
+                    {selectedArtist.pdfUrl && (
+                      <div className="pt-4 border-t border-gray-200">
                         <a
-                          key={k}
-                          href={v as string}
+                          href={selectedArtist.pdfUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="px-3 py-1 rounded-full bg-unides-purple/10 text-unides-purple hover:bg-unides-purple/20 transition"
+                          className="flex items-center justify-center gap-2 w-full rounded-lg bg-unides-lime px-6 py-3 text-base font-semibold text-gray-900 hover:bg-unides-lime/90 transition-all hover:scale-[1.02] shadow-md hover:shadow-lg"
                         >
-                          {k}
+                          <svg className="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          </svg>
+                          Download Portfolio PDF
                         </a>
-                      ))}
+                      </div>
+                    )}
                   </div>
                 </div>
-                {selectedArtist.pdfUrl ? (
-                  <a
-                    href={selectedArtist.pdfUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-2 inline-block rounded-md bg-unides-purple px-4 py-2 text-sm font-medium text-white hover:bg-unides-purple/90 transition"
-                  >
-                    Download PDF
-                  </a>
-                ) : null}
+
+                {/* Description Row */}
+                {selectedArtist.description && (
+                  <div className="border-t border-gray-200 pt-8">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                      <svg className="h-5 w-5 text-unides-purple flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                      </svg>
+                      About
+                    </h3>
+                    <p className="text-sm md:text-base leading-relaxed text-gray-700 whitespace-pre-line">
+                      {selectedArtist.description}
+                    </p>
+                  </div>
+                )}
+
+                {/* 4-column Image Gallery */}
+                {selectedArtist.imgs && selectedArtist.imgs.length > 0 && (
+                  <div className="border-t border-gray-200 pt-8">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                      <svg className="h-5 w-5 text-unides-purple flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                      Gallery
+                    </h3>
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+                      {selectedArtist.imgs.map((img, idx) => (
+                        <button
+                          key={idx}
+                          type="button"
+                          onClick={() => setLightboxImage(img)}
+                          className="relative aspect-square rounded-lg overflow-hidden bg-gray-100 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-unides-purple focus:ring-offset-2 group"
+                        >
+                          <Image
+                            src={img}
+                            alt={`${selectedArtist.name} gallery image ${idx + 1}`}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw"
+                          />
+                          {/* Hover overlay */}
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                            <svg className="h-8 w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                            </svg>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
         </div>
       ) : null}
+
+      {/* Lightbox Modal for Full-Resolution Images */}
+      {lightboxImage && (
+        <div
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm animate-in fade-in duration-200"
+          onClick={() => setLightboxImage(null)}
+          aria-hidden={false}
+        >
+          <button
+            type="button"
+            onClick={() => setLightboxImage(null)}
+            className="absolute right-4 top-4 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm text-white shadow-lg transition-all hover:bg-white/20 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+            aria-label="Close lightbox"
+          >
+            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <div
+            className="relative max-w-7xl max-h-[90vh] w-full h-full flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="relative w-full h-full">
+              <Image
+                src={lightboxImage}
+                alt="Full resolution image"
+                fill
+                className="object-contain"
+                sizes="100vw"
+                quality={100}
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </ContentSection>
   );
 }

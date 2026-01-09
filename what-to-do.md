@@ -1,5 +1,0 @@
-- image loading and optimization
-- new about section
-- new contact section
-- the database has missing fields
-- the Talent modal needs to change
