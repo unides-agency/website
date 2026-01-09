@@ -2,17 +2,18 @@
 import ContentSection from "./ContentSection";
 import { cn } from "@/utils/cn";
 import Image from "next/image";
-import { useState, useEffect, useCallback } from "react"; // changed
+import { useState, useEffect, useTransition } from "react";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import type { Artist } from "@/data/types";
 
 const FILTERS = ["All", "Creative", "Talent"] as const;
 
 export default function Artists({ artists }: { artists: Artist[] }) {
-  // filtering logic
+  // React 19: useTransition for non-blocking filter updates
+  const [isPending, startTransition] = useTransition();
   const [activeFilter, setActiveFilter] = useState<(typeof FILTERS)[number]>("All");
 
-  // modal + routing logic (temporary inline implementation)
+  // modal + routing logic
   const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -22,21 +23,24 @@ export default function Artists({ artists }: { artists: Artist[] }) {
   // helper type for roles union to avoid any casts
   type RoleUnion = { type: string } & Record<string, unknown>;
 
-  const closeModal = useCallback(() => {
-    // remove artist param while staying on page
+  // React 19: No need for useCallback with compiler optimizations
+  const closeModal = () => {
     router.push(pathname, { scroll: false });
-  }, [router, pathname]);
+  };
 
   // esc key handler
   useEffect(() => {
     if (!selectedArtist) return;
     const handler = (e: KeyboardEvent) => {
-      if (e.key === "Escape") closeModal();
+      if (e.key === "Escape") {
+        router.push(pathname, { scroll: false });
+      }
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [selectedArtist, closeModal]);
+  }, [selectedArtist, pathname, router]);
 
+  // React 19: Direct computation without useMemo - compiler handles optimization
   const filteredArtists =
     activeFilter === "All"
       ? artists
@@ -62,6 +66,13 @@ export default function Artists({ artists }: { artists: Artist[] }) {
     return null;
   };
 
+  // React 19: Handle filter changes with transition for better UX
+  const handleFilterChange = (filter: typeof FILTERS[number]) => {
+    startTransition(() => {
+      setActiveFilter(filter);
+    });
+  };
+
   return (
     <ContentSection
       id="talents"
@@ -77,10 +88,12 @@ export default function Artists({ artists }: { artists: Artist[] }) {
             <button
               key={filter}
               type="button"
-              onClick={() => setActiveFilter(filter)}
+              onClick={() => handleFilterChange(filter)}
+              disabled={isPending}
               className={cn(
                 "px-3 sm:px-4 py-2 rounded-full transition-colors text-sm sm:text-base",
-                isActive ? "bg-unides-purple text-white" : "bg-gray-200 hover:bg-gray-300 text-gray-700"
+                isActive ? "bg-unides-purple text-white" : "bg-gray-200 hover:bg-gray-300 text-gray-700",
+                isPending && "opacity-70 cursor-wait"
               )}
             >
               {filter} ({filter === "All" ? artists.length : getArtistCount(filter)})
@@ -89,7 +102,10 @@ export default function Artists({ artists }: { artists: Artist[] }) {
         })}
       </div>
 
-      <div className={cn("w-full grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4")}>
+      <div className={cn(
+        "w-full grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4",
+        isPending && "opacity-60 transition-opacity"
+      )}>
         {filteredArtists.map((artist) => {
           const roles = artist.roles;
           const href = `${pathname}?artist=${encodeURIComponent(artist.id)}`;
