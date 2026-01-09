@@ -1,138 +1,79 @@
 "use client";
-import React, { useState, useRef } from "react";
 import ContentSection from "./ContentSection";
 import { cn } from "@/utils/cn";
 
-type Section = {
-  id: string;
-  title: string;
-  body: string;
-};
+const TEXT_BLOCKS: string[] = [
+  `Unides is the spot where creativity gets real connections. We link artists, filmmakers, models, and creators of all kinds with brands, festivals, stages, and screens. We also turn things upside down with events that are pure vibes, where music, art, and community come together and create unforgettable memories.`,
+  `Our mission? To boost the next generation of Latinx visionaries from the underground scene to visual artists who are breaking all the rules. We connect the most authentic creativity with brands and an audience that's tired of fake and hungry for something with soul. Our movement is to revolutionize what "Latin art" means in Europe, tearing apart stereotypes with attitude and innovation.`,
+  `The vision is clear: to unite Latinx talent and culture to transform the creative scene with courage, purpose, and energy. We honor our roots and celebrate the diversity that makes us strong. Because, seriously, what's the point of growing if we're not all rising together?`,
+  `We build careers through real collaboration and a community that gets that the journey can be challenging. That's why we're not just agents, we're ride-or-die partners. Every connection we make is built on mutual respect, full transparency, and trust that's here to stay.`,
+];
 
-const SECTIONS: Section[] = [
-  {
-    id: "vision",
-    title: "our vision",
-    body: "Our vision is to create a vibrant and inclusive community where artists and creators can thrive, collaborate, and inspire each other. We believe in the transformative power of art to connect people, challenge perspectives, and drive positive change in society.",
-  },
-  {
-    id: "mission",
-    title: "our mission",
-    body: "Our mission is to empower artists and creators by providing them with the resources, opportunities, and support they need to succeed. We are committed to fostering a culture of creativity, innovation, and collaboration, and to promoting diversity and inclusion in all aspects of our work.",
-  },
-  {
-    id: "values",
-    title: "our values",
-    body: "We value creativity, authenticity, and integrity in all that we do. We are dedicated to supporting and uplifting artists and creators from all backgrounds and disciplines. We believe in the power of community and collaboration to drive positive change, and we are committed to fostering a culture of respect, inclusivity, and empowerment.",
-  },
+const TALENTS: string[] = [
+  "Models",
+  "Content Creators",
+  "Dancers",
+  "Actors",
+  "Directors",
+  "Production",
+  "Photographers & Videographers",
+  "Stylists",
+  "Makeup and Nail Artists",
+  "Art Directors",
+  "Tattoo Artists",
 ];
 
 export default function AboutUs() {
-  const [openId, setOpenId] = useState<string | null>(null);
-
-  const toggle = (id: string) => setOpenId((curr) => (curr === id ? null : id));
-
   return (
     <ContentSection
       id="about"
       title="about us"
-      subtitle="At Unides nides, we connect artists, filmmakers, models and creators of all kinds with brands, stages and screens."
-      secondarySubtitle="We also bring culture to life through unforgettable events - where music, art and community meet."
+      subtitle=""
+      secondarySubtitle=""
       bgColor="unides-lime"
       accentColor="unides-orange"
     >
-      <div className="w-4/5 max-w-4xl flex flex-col items-stretch gap-4">
-        {SECTIONS.map((section) => (
-          <AccordionItem
-            key={section.id}
-            section={section}
-            open={openId === section.id}
-            onToggle={() => toggle(section.id)}
-          />
-        ))}
-      </div>
-    </ContentSection>
-  );
-}
+      <h3 className="font-jaro text-unides-orange text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 sm:mb-8 self-start text-center sm:text-left w-full">
+        our mission and manifest
+      </h3>
 
-function AccordionItem({
-  section,
-  open,
-  onToggle,
-}: {
-  section: Section;
-  open: boolean;
-  onToggle: () => void;
-}) {
-  const contentRef = useRef<HTMLDivElement | null>(null);
+      <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-8 lg:gap-12 w-full">
+        <div className="flex flex-col items-stretch gap-6 sm:gap-8 lg:gap-12">
+          {TEXT_BLOCKS.map((text, index) => (
+            <p
+              key={index}
+              className={cn(
+                "font-sans font-medium text-base sm:text-lg md:text-xl lg:text-2xl text-unides-green leading-relaxed"
+              )}
+            >
+              {text}
+            </p>
+          ))}
+        </div>
 
-  return (
-    <div
-      className={cn(
-        "rounded-xl bg-unides-orange backdrop-blur-sm shadow-sm",
-        "transition-all duration-300"
-      )}
-    >
-      <button
-        className={cn(
-          "group relative w-full flex items-center justify-center p-5",
-          "focus:outline-none focus-visible:ring-2 focus-visible:ring-unides-orange/60",
-          "font-jaro"
-        )}
-        aria-expanded={open}
-        aria-controls={`${section.id}-panel`}
-        onClick={onToggle}
-      >
-        <span className="text-3xl md:text-4xl text-white pointer-events-none text-center">
-          {section.title}
-        </span>
-        <span
-          className={cn(
-            "absolute right-5 flex items-center justify-center size-12 shrink-0 rounded-full",
-            "bg-unides-orange text-white",
-            "transition-transform duration-300",
-            open ? "rotate-45" : "rotate-0"
-          )}
-        >
-          <PlusIcon />
-        </span>
-      </button>
-      <div
-        id={`${section.id}-panel`}
-        className={cn(
-          "grid transition-[grid-template-rows] duration-400 ease-in-out",
-          open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-        )}
-      >
-        <div
-          ref={contentRef}
-          className={cn(
-            "overflow-hidden px-6 pb-6 text-base leading-relaxed text-white",
-            "opacity-0 translate-y-2 transition-all duration-300",
-            open && "opacity-100 translate-y-0"
-          )}
-        >
-          <p>{section.body}</p>
+        <div className="flex flex-col items-stretch gap-3 sm:gap-4">
+          {TALENTS.map((talent, index) => (
+            <p
+              key={index}
+              className={cn(
+                "font-jaro text-lg sm:text-xl lg:text-2xl text-unides-orange leading-relaxed",
+                "border-2 border-unides-orange text-center p-2 sm:p-3"
+              )}
+            >
+              {talent}
+            </p>
+          ))}
         </div>
       </div>
-    </div>
-  );
-}
 
-function PlusIcon() {
-  return (
-    <svg
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="3"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <line x1="12" x2="12" y1="4" y2="20" />
-      <line x1="4" x2="20" y1="12" y2="12" />
-    </svg>
+      <p
+        className={cn(
+          "border-y-4 sm:border-y-8 border-unides-orange py-6 sm:py-12 px-4 sm:px-8 lg:px-12 mt-12 sm:mt-24",
+          "font-sans font-medium text-center text-base sm:text-lg md:text-xl lg:text-2xl text-unides-green leading-relaxed"
+        )}
+      >
+        {`Since #DayOne, our goal has been clear: to connect incredible talent with the right platforms, people, and opportunities while staying true to who we are.`}
+      </p>
+    </ContentSection>
   );
 }

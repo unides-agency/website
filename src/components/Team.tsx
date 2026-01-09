@@ -60,7 +60,7 @@ export default function Team() {
       bgColor="unides-lime"
       accentColor="unides-orange"
     >
-      <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
         {TEAM_MEMBERS.map((m) => (
           <TeamCard key={m.id} member={m} />
         ))}
@@ -79,14 +79,14 @@ function TeamCard({ member }: TeamCardProps) {
       className={cn(
         "group relative flex flex-col rounded-xl overflow-hidden",
         "bg-neutral-200/5 border border-unides-orange/40 backdrop-blur-sm",
-        "aspect-[9/16] w-full",
+        "aspect-9/16 w-full",
         "shadow-sm hover:shadow-lg transition-shadow",
         "focus-within:ring-2 focus-within:ring-unides-orange/60"
       )}
       tabIndex={0}
     >
       {/* Image area (3/4 height) */}
-      <div className="flex-[3] relative w-full h-full">
+      <div className="flex-3 relative w-full h-full">
         <Image
           src={member.imgUrl}
           alt={member.name}
@@ -101,10 +101,10 @@ function TeamCard({ member }: TeamCardProps) {
         />
       </div>
       {/* Footer (1/4 height) */}
-      <div className="flex-1 bg-unides-orange text-white p-3 md:p-4 flex flex-col justify-start gap-1">
-        <h3 className="font-jaro text-lg md:text-xl leading-tight">{member.name}</h3>
-        <span className="font-sans text-xs font-normal ">{member.pronouns}</span>
-        <p className="font-medium tracking-wide leading-snug">{member.role}</p>
+      <div className="flex-1 bg-unides-orange text-white p-3 sm:p-4 flex flex-col justify-start gap-1">
+        <h3 className="font-jaro text-base sm:text-lg md:text-xl leading-tight">{member.name}</h3>
+        <span className="font-sans text-xs font-normal">{member.pronouns}</span>
+        <p className="text-sm sm:text-base font-medium tracking-wide leading-snug">{member.role}</p>
         <p className="text-xs leading-snug opacity-90">{member.subtitle}</p>
       </div>
     </article>

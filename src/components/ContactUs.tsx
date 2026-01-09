@@ -22,24 +22,24 @@ export default function ContactUs() {
       bgColor="white"
       accentColor="unides-pink"
     >
-      <div className="flex flex-wrap justify-between gap-12 w-4/5 max-w-4xl">
-        <article className="">
-          <h3 className="font-jaro text-4xl text-unides-pink">get in touch</h3>
-          <p className="max-w-md my-4">
-            {`Bring your vision, and let's craft a portfolio together. Your idea is the spark - we’ll
+      <div className="flex flex-col lg:flex-row lg:flex-wrap lg:justify-between gap-8 lg:gap-12 w-full max-w-6xl px-4">
+        <article className="flex-1 min-w-[280px]">
+          <h3 className="font-jaro text-3xl sm:text-4xl text-unides-pink">get in touch</h3>
+          <p className="max-w-md my-4 text-sm sm:text-base">
+            {`Bring your vision, and let's craft a portfolio together. Your idea is the spark - we'll
             help turn it into reality.`}
             <br />
             {`Send us a message and we'll respond as soon as possible.`}
           </p>
 
-          <h3 className="text-unides-pink">email</h3>
-          <p className="max-w-md mb-4">unides.agency@gmail.com</p>
+          <h3 className="text-unides-pink text-lg sm:text-xl">email</h3>
+          <p className="max-w-md mb-4 text-sm sm:text-base">unides.agency@gmail.com</p>
 
-          <h3 className="text-unides-pink">phone</h3>
-          <p className="max-w-md mb-4">+49 (151) 5614 6198</p>
+          <h3 className="text-unides-pink text-lg sm:text-xl">phone</h3>
+          <p className="max-w-md mb-4 text-sm sm:text-base">+49 (151) 5614 6198</p>
 
-          <h3 className="text-unides-pink">address</h3>
-          <p className="max-w-md mb-4">
+          <h3 className="text-unides-pink text-lg sm:text-xl">address</h3>
+          <p className="max-w-md mb-4 text-sm sm:text-base">
             Soldiner Straße 72 <br />
             13359 <br />
             Berlin

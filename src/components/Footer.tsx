@@ -88,18 +88,18 @@ export default function Footer() {
   return (
     <footer
       className={cn(
-        "flex flex-col gap-8 py-12",
-        "bg-gradient-to-b from-unides-green to-unides-green-dark"
+        "flex flex-col gap-6 sm:gap-8 py-8 sm:py-12 px-4",
+        "bg-linear-to-b from-unides-green to-unides-green-dark"
       )}
     >
-      <div className="w-full flex items-center justify-around flex-wrap gap-8 ">
-        <div className="max-w-md flex flex-col gap-4">
-          <Image src="/unides_lime.png" alt="Unides" width={200} height={50} />
+      <div className="w-full flex flex-col lg:flex-row items-start lg:items-center justify-around gap-8 lg:gap-12 max-w-7xl mx-auto">
+        <div className="w-full lg:max-w-md flex flex-col gap-3 sm:gap-4">
+          <Image src="/unides_lime.png" alt="Unides" width={200} height={50} className="w-40 sm:w-52" />
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-xl text-unides-gray hover:underline mx-4"
+              className="text-base sm:text-lg lg:text-xl text-unides-gray hover:underline mx-2 sm:mx-4"
             >
               {item.label}
             </Link>
@@ -108,7 +108,7 @@ export default function Footer() {
           <ul className="flex items-center gap-4">
             {links.map((link) => {
               return (
-                <li className="flex-shrink-0" key={link.url}>
+                <li className="shrink-0" key={link.url}>
                   <Link
                     className={cn(
                       "flex size-12 p-2 items-center justify-center rounded-full  ",
@@ -128,18 +128,18 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="max-w-xs flex flex-col gap-8 ">
-          <p className="text-white text-2xl">Subscribe to keep up with the latest news</p>
+        <div className="w-full lg:max-w-sm flex flex-col gap-4 sm:gap-6 lg:gap-8">
+          <p className="text-white text-lg sm:text-xl lg:text-2xl">Subscribe to keep up with the latest news</p>
 
-          <div className="flex bg-white rounded-lg">
+          <div className="flex bg-white rounded-lg w-full">
             <input
               type="email"
-              className="bg-white flex-1 rounded-sm px-4 focus:outline-none"
+              className="bg-white flex-1 rounded-sm px-3 sm:px-4 text-sm sm:text-base focus:outline-none min-w-0"
               placeholder="enter your email..."
             />
             <button
               type="button"
-              className="bg-unides-lime p-4 rounded-sm cursor-pointer hover:scale-105 transition-all duration-200 ease-in-out"
+              className="bg-unides-lime p-3 sm:p-4 rounded-sm cursor-pointer hover:scale-105 transition-all duration-200 ease-in-out shrink-0"
             >
               <svg
                 width="28"
@@ -155,8 +155,8 @@ export default function Footer() {
               </svg>
             </button>
           </div>
-          <p className="text-white text">
-            by submitting this form,you acknowledge that you have the terms of our{" "}
+          <p className="text-white text-xs sm:text-sm">
+            by submitting this form, you acknowledge that you have read the terms of our{" "}
             <Link className="underline" href="/privacy">
               Privacy Statement
             </Link>

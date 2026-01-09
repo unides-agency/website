@@ -70,7 +70,7 @@ export default function Artists({ artists }: { artists: Artist[] }) {
       accentColor="unides-lime"
       bgColor="white"
     >
-      <div className="flex gap-8 mb-8">
+      <div className="flex flex-wrap gap-3 sm:gap-4 md:gap-8 mb-8 justify-center">
         {FILTERS.map((filter) => {
           const isActive = activeFilter === filter;
           return (
@@ -79,7 +79,7 @@ export default function Artists({ artists }: { artists: Artist[] }) {
               type="button"
               onClick={() => setActiveFilter(filter)}
               className={cn(
-                "px-4 py-2 rounded-full transition-colors",
+                "px-3 sm:px-4 py-2 rounded-full transition-colors text-sm sm:text-base",
                 isActive ? "bg-unides-purple text-white" : "bg-gray-200 hover:bg-gray-300 text-gray-700"
               )}
             >
@@ -89,7 +89,7 @@ export default function Artists({ artists }: { artists: Artist[] }) {
         })}
       </div>
 
-      <div className={cn("w-full grid gap-4 grid-cols-4")}>
+      <div className={cn("w-full grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4")}>
         {filteredArtists.map((artist) => {
           const roles = artist.roles;
           const href = `${pathname}?artist=${encodeURIComponent(artist.id)}`;
@@ -107,27 +107,27 @@ export default function Artists({ artists }: { artists: Artist[] }) {
                 "shadow-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-unides-purple/60 hover:shadow-lg"
               )}
             >
-              <div className="relative w-full aspect-[9/16] min-h-[25vh] rounded-xl overflow-hidden">
+              <div className="relative w-full aspect-9/16 min-h-75 sm:min-h-87.5 lg:min-h-[25vh] rounded-xl overflow-hidden">
                 {/* Background image */}
                 <Image
                   src={artist.profilePic}
                   alt={artist.name}
                   fill
-                  sizes="(max-width: 768px) 100vw, 25vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover scale-100 group-hover:scale-105 group-focus:scale-105 transition-transform duration-500"
                   priority={false}
                 />
                 {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-black/10" />
                 {/* Content overlay */}
-                <div className="absolute inset-0 flex flex-col justify-end p-4 text-white">
-                  <h3 className="font-jaro text-xl leading-tight drop-shadow-sm">{artist.name}</h3>
-                  <p className="text-xs opacity-90 mt-1">
+                <div className="absolute inset-0 flex flex-col justify-end p-3 sm:p-4 text-white">
+                  <h3 className="font-jaro text-lg sm:text-xl leading-tight drop-shadow-sm">{artist.name}</h3>
+                  <p className="text-xs sm:text-sm opacity-90 mt-1">
                     {artist.location.city}, {artist.location.country}
                     {birthYear ? ` • ${birthYear}` : ""}
                   </p>
                   {roles && (
-                    <p className="mt-2 text-[10px] uppercase tracking-wide line-clamp-2 opacity-80">
+                    <p className="mt-1 sm:mt-2 text-[9px] sm:text-[10px] uppercase tracking-wide line-clamp-2 opacity-80">
                       {Object.values(roles)
                         .filter((role): role is { type: string } => {
                           if (!role) return false;
